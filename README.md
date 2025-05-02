@@ -1,7 +1,9 @@
 # WiSSkHy
 Wiki Soft Suite for Hydrology
+
 ## Introduction
-Local environment for hydrological data management using an SQLite database and open-source tools. Enables:
+WiSSkHy is a local environment for hydrological data management using an SQLite database and open-source tools. 
+It enables:
 - data storage (local SQLite db)
 - data cleaning
 - data wrangling
@@ -9,3 +11,7 @@ Local environment for hydrological data management using an SQLite database and 
 - data analysis/exploration
 - data exportation (.csv, .xlsx) 
 - automated LaTeX and HTML report generation for hydrological services and researchers
+
+
+
+## Installation
