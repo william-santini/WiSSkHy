@@ -7,8 +7,8 @@ It enables:
 - data storage (local SQLite db)
 - data cleaning
 - data wrangling
-- data visualization (interactive plots)
-- data analysis/exploration
+- data visualization/exploration (interactive plots)
+- data analysis
 - data exportation (.csv, .xlsx) 
 - automated LaTeX and HTML report generation for hydrological services and researchers
 
