@@ -21,7 +21,18 @@ It enables:
 
 ## How to Use
 
-![image](https://github.com/user-attachments/assets/2fdc244f-b4cb-4183-b96e-0f82ede37763)
+![image](https://github.com/user-attachments/assets/d1e9c9dd-d984-45d8-b551-fcca412655c0)
+  
+![image](https://github.com/user-attachments/assets/81cc87d5-0a6f-4f83-92d0-a5151a946691)
+  
+![image](https://github.com/user-attachments/assets/f48482c7-6c99-40d2-8ad3-a6adcd3dbc8e)
+  
+![image](https://github.com/user-attachments/assets/2059dbba-1017-447b-a18a-47fda594a6cc)
+  
+![image](https://github.com/user-attachments/assets/37fd623e-2f08-4731-aea2-f100496b4a10)
+
+
+
 
 
 
