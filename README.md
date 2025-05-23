@@ -9,7 +9,7 @@ It enables:
 - data cleaning
 - data wrangling
 - data visualization/exploration (interactive plots)
-- data analysis
+- data analysis (Suite of Tools)
 - data exportation (.csv, .xlsx) 
 - automated LaTeX and HTML report generation for hydrological services and researchers
 
