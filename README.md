@@ -25,8 +25,10 @@ It provides a complete workflow to support hydrological services and researchers
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
 ## Database Structure
+The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
-The WiSSkHy database is based on the **time series** concept. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
+### Main tables
+
 
 
 
@@ -56,6 +58,11 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ![image](https://github.com/user-attachments/assets/2059dbba-1017-447b-a18a-47fda594a6cc)
   
 ![image](https://github.com/user-attachments/assets/37fd623e-2f08-4731-aea2-f100496b4a10)
+
+### Create a new station
+
+
+### Create a new parameter set
 
 ## Data management
 
