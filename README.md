@@ -37,9 +37,9 @@ The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy 
 ## Database Structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
-A time series (ts) is defined as the combination of a **parameter type** and a **temporal resolution**:
+A time series (ts) is defined as the combination of a **parameter** and a **temporal resolution**:
 
-- Example of parameter types:  
+- Example of parameter:  
   - Q = Water discharge  
   - Ct = Total Suspended Sediment Concentration
   - ...
@@ -50,6 +50,9 @@ A time series (ts) is defined as the combination of a **parameter type** and a *
   - M = Monthly  
   - Y = Yearly  
 
+ For instance, Q can have various temporal resolution: 
+ 
+ 
  When the user creates a station, they must choose and configure a parameter set:
 
 
@@ -67,6 +70,10 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 #### Type of Time Series
 
 #### Origin of the Data
+
+<img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
+
+
 
 #### Quality of the Data
 
