@@ -7,33 +7,20 @@ WiSSkHy is a **local** environment built with R-Shiny for hydrological data mana
 
 It provides a complete workflow to support hydrological services and researchers, including:
 
-📥 Data import & storage in a local SQLite database
-
-🗂️ Database management (visualize, add, or delete tables and fields)
-
-🧹 Data cleaning
-
-🔄 Data wrangling
-
-📊 Data visualization & exploration (interactive plots and tables)
-
-⚙️ Data processing and analysis with a suite of tools for:
-
-📈 Rating curves
-
-🌊 ADCP measurements
-
-⚖️ Solid gauging
-
-🔄 Flux calculation
-
-🛰️ Remote sensing data processing
-
-🧪 Geochemistry
-
-📤 Data export to .csv, .xlsx, etc.
-
-📝 Automated report generation in LaTeX and HTML
+- Data import & storage in a local SQLite database
+- Database management (visualize, add, or delete tables and fields)
+- Data cleaning
+- Data wrangling
+- Data visualization & exploration (interactive plots and tables)
+- Data processing and analysis with a suite of tools for:
+  - Rating curves
+  - ADCP measurements
+  - Solid gaugings
+  - Flux calculation
+  - Remote sensing data processing
+  - Geochemistry
+- Data export to .csv, .xlsx, etc.
+- Automated report generation in LaTeX and HTML
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
