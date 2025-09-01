@@ -25,10 +25,20 @@ It provides a complete workflow to support hydrological services and researchers
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
 
+## Database structure
+
+
+## The WiSSkHy R-Shiny Apps
+
+
+## Use your own R, Py, Matlab, etc. script with the database
+
+
+
 ## Installation
 
 
-## How to Use
+## Database management
 
 ![image](https://github.com/user-attachments/assets/d1e9c9dd-d984-45d8-b551-fcca412655c0)
   
@@ -40,8 +50,8 @@ It provides a complete workflow to support hydrological services and researchers
   
 ![image](https://github.com/user-attachments/assets/37fd623e-2f08-4731-aea2-f100496b4a10)
 
+## Data management
 
 
-
-
+## Tools
 
