@@ -31,12 +31,12 @@ It provides a complete workflow to support hydrological services and researchers
 ## The WiSSkHy R-Shiny Apps
 
 
-## Use your own R, Py, Matlab, etc. script with the database
-
+## Use your own R, Py, Matlab, etc. script with the WiSSkHy database
 
 
 ## Installation
-
+You can either run the Shiny Apps with R Studio or run the WiSSkHy.exe.
+To read externally the WiSSkHy SQLite database, if needed, you can install Dbeaver or SQlite Browser
 
 ## Database management
 
