@@ -30,6 +30,9 @@ The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy 
 > **Tip**  
 > This flexibility allows users to integrate their own processing, analysis, or visualization workflows while leveraging the common WiSSkHy database structure.
 
+> [!IMPORTANT]  
+> This flexibility allows users to integrate their own processing, analysis, or visualization workflows while leveraging the common WiSSkHy database structure.
+
 
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
