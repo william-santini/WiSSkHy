@@ -30,6 +30,25 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
 ### Main tables
 
 
+### Annex Tables
+
+It is possible to easily configure the database using the **Annex tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
+
+#### Type of Stations
+
+#### Type of Time Series
+
+#### Origin of the Data
+
+#### Quality of the Data
+
+#### Type of Parameters
+
+
+
+
+
+
 
 
 ## The WiSSkHy R-Shiny Apps
