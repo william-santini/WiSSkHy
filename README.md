@@ -26,6 +26,22 @@ It provides a complete workflow to support hydrological services and researchers
 
 ## Database Structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
+A time series (ts) is defined as the combination of a **parameter type** and a **temporal resolution**:
+
+- Example of parameter types:  
+  - Q = Water discharge  
+  - Ct = Total Suspended Sediment Concentration
+  - ...
+
+- Temporal resolution of the time series:  
+  - I = Instantaneous  
+  - D = Daily  
+  - M = Monthly  
+  - Y = Yearly  
+
+ 
+
+
 
 ### Main tables
 
