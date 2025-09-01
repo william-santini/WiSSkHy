@@ -35,8 +35,8 @@ It provides a complete workflow to support hydrological services and researchers
 
 
 ## Installation
-You can either run the Shiny Apps with R Studio or run the WiSSkHy.exe.
-To read externally the WiSSkHy SQLite database, if needed, you can install Dbeaver or SQlite Browser
+You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
+If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
 ## Database management
 
