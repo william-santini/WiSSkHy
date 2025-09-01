@@ -77,15 +77,13 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 
 #### Quality of the Data
 
-#### Type of Parameters
+<img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
 
 
+#### Parameters
 
-
-
-
-
+<img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
 
 ## Installation
