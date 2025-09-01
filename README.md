@@ -2,7 +2,7 @@
 Wiki Soft Suite for Hydrology   
 Distill your data. Hydrate your science...
 
-## Introduction
+## The WiSSkHy R-Shiny Apps
 WiSSkHy is a **local** environment built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools.
 
 It provides a complete workflow to support hydrological services and researchers, including:
@@ -21,6 +21,14 @@ It provides a complete workflow to support hydrological services and researchers
   - Geochemistry
 - Data export to .csv, .xlsx, etc.
 - Automated report generation in LaTeX and HTML
+
+The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy environment. Users can also:
+- Add new tools directly in R-Shiny, either within the existing Apps or independently.
+- Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
+- Use the Apps to automatically generate SQL queries that can be reused in custom code.
+
+**This flexibility allows users to integrate their own processing, analysis, or visualization workflows while leveraging the centralized WiSSkHy database structure.**
+
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
@@ -69,16 +77,7 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 
 
 
-## The WiSSkHy R-Shiny Apps
 
-The WiSSkHy R-Shiny Apps was created to provide access to the main tools of the WiSSkHy environment. However, users can also:
-- Add new tools directly in R-Shiny, either within the existing apps or independently.
-- Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
-- Use the apps to automatically generate SQL queries that can be reused in your own code.
-
-## Using Your Own Scripts with the WiSSkHy Database
-
-You can integrate your own R, Python, MATLAB, or other scripts with the WiSSkHy database for custom data processing, analysis, or visualization. This allows full flexibility while leveraging the centralized database structure.
 
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
