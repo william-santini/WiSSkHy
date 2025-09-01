@@ -26,7 +26,7 @@ It provides a complete workflow to support hydrological services and researchers
 
 ## Database Structure
 
-The WiSSkHy database is based on the **time series** concept. Discrete (punctual) measurements are also treated as time series, since each measurement is associated with a date.
+The WiSSkHy database is based on the **time series** concept. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
 
 
