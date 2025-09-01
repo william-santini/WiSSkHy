@@ -3,15 +3,27 @@ Wiki Soft Suite for Hydrology
 Distill your data. Hydrate your science...
 
 ## Introduction
-WiSSkHy is a local environment for hydrological data management using an SQLite database and open-source tools. 
-It enables:
-- data storage (local SQLite db)
-- data cleaning
-- data wrangling
-- data visualization/exploration (interactive plots)
-- data analysis (Suite of Tools)
-- data exportation (.csv, .xlsx) 
-- automated LaTeX and HTML report generation for hydrological services and researchers
+WiSSkHy is a **local** environment built with R-Shiny for hydrological data management based on an SQLite database and fully open-source tools.
+
+It provides a complete workflow to support hydrological services and researchers, including:
+
+- Data import & storage in a local SQLite database
+
+- Database management (visualize, add, or delete tables and fields)
+
+- Data cleaning
+
+- Data wrangling
+
+- Data visualization & exploration (interactive plots)
+
+- Data analysis (suite of tools)
+
+- Flux calculation
+
+- Data export to .csv, .xlsx, etc.
+
+- Automated report generation in LaTeX and HTML
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
