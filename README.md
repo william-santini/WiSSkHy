@@ -27,7 +27,7 @@ The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy 
 - Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
 - Use the Apps to automatically generate SQL queries that can be reused in custom code.
 
-::: note
+::: note  
 This flexibility allows users to integrate their own processing, analysis, or visualization workflows while leveraging the common WiSSkHy database structure.
 :::
 
