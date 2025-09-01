@@ -15,11 +15,11 @@ It provides a complete workflow to support hydrological services and researchers
 
 - Data wrangling
 
-- Data visualization & exploration (interactive plots)
+- Data visualization & exploration (interactive plots and tables)
 
 - Data analysis (suite of tools)
 
-- Flux calculation
+  - Flux calculation
 
 - Data export to .csv, .xlsx, etc.
 
