@@ -24,15 +24,22 @@ It provides a complete workflow to support hydrological services and researchers
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
+## Database Structure
 
-## Database structure
+The WiSSkHy database is based on the **time series** concept. Discrete (punctual) measurements are also treated as time series, since each measurement is associated with a date.
+
 
 
 ## The WiSSkHy R-Shiny Apps
 
+The WiSSkHy apps were created to provide access to the main tools of the WiSSkHy environment. However, users can also:
+- Add new tools directly in R-Shiny, either within the existing apps or independently.
+- Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
+- Use the apps to generate SQL queries that can be reused in your own code.
 
-## Use your own R, Py, Matlab, etc. script with the WiSSkHy database
+## Using Your Own Scripts with the WiSSkHy Database
 
+You can integrate your own R, Python, MATLAB, or other scripts with the WiSSkHy database for custom data processing, analysis, or visualization. This allows full flexibility while leveraging the centralized database structure.
 
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
