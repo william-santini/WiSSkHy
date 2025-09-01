@@ -26,6 +26,7 @@ It provides a complete workflow to support hydrological services and researchers
 
 ## Database Structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
+
 A time series (ts) is defined as the combination of a **parameter type** and a **temporal resolution**:
 
 - Example of parameter types:  
@@ -39,9 +40,10 @@ A time series (ts) is defined as the combination of a **parameter type** and a *
   - M = Monthly  
   - Y = Yearly  
 
+ When the user creates a station, they must choose and configure a parameter set:
+
+
  
-
-
 
 ### Main tables
 
@@ -69,10 +71,10 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 
 ## The WiSSkHy R-Shiny Apps
 
-The WiSSkHy apps were created to provide access to the main tools of the WiSSkHy environment. However, users can also:
+The WiSSkHy R-Shiny Apps was created to provide access to the main tools of the WiSSkHy environment. However, users can also:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
-- Use the apps to generate SQL queries that can be reused in your own code.
+- Use the apps to automatically generate SQL queries that can be reused in your own code.
 
 ## Using Your Own Scripts with the WiSSkHy Database
 
