@@ -37,20 +37,21 @@ The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy 
 ## Database Structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
-A time series (ts) is defined as the combination of a **parameter** and a **temporal resolution**:
+> [!Important]
+>A time series (ts) is defined as the combination of a **parameter** and a **temporal record**:
 
-- Example of parameter:  
+- Example of parameters:  
   - Q = Water discharge  
-  - Ct = Total Suspended Sediment Concentration
-  - ...
+  - Ct = Total Suspended Sediment Concentration  
+  - ...  
 
-- Temporal resolution of the time series:  
+- Example of temporal records:  
   - I = Instantaneous  
   - D = Daily  
   - M = Monthly  
   - Y = Yearly  
 
- For instance, Q can have various temporal resolution: 
+ For instance, the parameter Q can have various temporal resolution: 
  
  
  When the user creates a station, they must choose and configure a parameter set:
