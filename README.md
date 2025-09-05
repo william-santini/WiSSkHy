@@ -132,7 +132,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ## Data management
 
-### Import data
+### Import
 
 ### Export or delete
 
@@ -142,7 +142,23 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ## Tools
 
-## SQL automatic query generator
+### ADCP
+
+### Rating tools
+
+### Discharge & Flux
+
+### Remote-sensing
+
+### Geochemistry
+
+### Data analysis
+
+### External tools
+
+### Automatic reports
+
+## Query generator
 
 
 
