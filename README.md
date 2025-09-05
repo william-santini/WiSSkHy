@@ -175,7 +175,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Wrangling
 
-### Analysis
+### Summary & Visualization
 
 
 
