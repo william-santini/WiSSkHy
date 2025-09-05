@@ -71,9 +71,7 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 > WiSSkHy continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
 
 
-## Installation
-You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
-If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
+
 
 
 ## Database structure
@@ -123,35 +121,42 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 
 ### Main tables
 
-#### Stations
+#### Thing (Station)
 
-#### Time Series
+### Location
 
-#### Data
+#### Datastream (Time Series)
+
+#### Observation (Data)
 
 
 ### Configuration Tables
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
 
-#### Type of Stations
+#### FeatureofInterest (FOI)
 
-#### Parameters
+#### Parameters (ObservedProperty)
 
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
 #### Temporal records
 
-#### Origin of the Data
+#### Sensor (Origin)
 
 <img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
 
-#### Quality of the Data
+#### Quality
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
+# Getting Started with the WiSSkHy Apps
 
-## Database
+## Installation
+You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
+If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
+
+## Database tab
 
 ### Start by creating or loading a WiSSkHy database
 
@@ -163,7 +168,7 @@ It is possible to easily configure the database using the **configuration tables
 
 ### Create a new parameter set
 
-## Data
+## Data tab
 
 ### Import
 
@@ -177,23 +182,27 @@ It is possible to easily configure the database using the **configuration tables
 
 
 
-## Advanced tools
+## Tools tab
 
-### ADCP
+### Hydro
 
-### Rating tools
+#### ADCP
 
-### Discharge & Flux
+#### Rating tools
+
+#### Discharge & Flux
 
 ### Remote-sensing
 
-### PSD
+### Sediment
+#### PSD
+#### Vertival profiles
 
 ### Geochemistry
 
 ### External tools
 
-### Automatic reports
+## Automatic reports
 
 ## Query generator
 
