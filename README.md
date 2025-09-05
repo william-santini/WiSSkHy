@@ -160,12 +160,12 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 <img width="1907" height="887" alt="image" src="https://github.com/user-attachments/assets/9a990657-91f9-41e6-b531-38f15d1023e9" />
 
 
-### Create a new station
+### Create a new station/Thing
 
 
 ### Create a new parameter set
 
-## Data tab
+## Data Tab
 
 ### Import
 
@@ -179,7 +179,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 
 
-## Tools tab
+## Tools Tab
 
 ### Hydro
 
@@ -189,19 +189,31 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 #### Discharge & Flux
 
+### Sediment
+
+#### PSD
+
+#### LISST
+
+#### Turbidity
+
+#### Vertival profiles
+
+#### Modelling
+
 ### Remote-sensing
 
-### Sediment
-#### PSD
-#### Vertival profiles
+#### Altimetry
+
+#### Water color
 
 ### Geochemistry
 
-### External tools
 
-## Automatic reports
 
-## Query generator
+## Automatic reports Tab
+
+## Query generator Tab
 
 
 # Credits
