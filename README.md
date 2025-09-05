@@ -41,23 +41,23 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
 > [!Important]
 >A time series (ts) is defined as the combination of a **parameter** and a **temporal record**:
 
-- Example of parameters:  
+- Example of **parameters**:  
   - Q = Water discharge  
   - Cst = Total Suspended Sediment Concentration  
   - ...
 
-- Example of temporal records:  
+- Example of **temporal records**:  
   - I = Instantaneous  
   - D = Daily  
   - M = Monthly  
   - Y = Yearly  
 
- For instance, the parameter Q can have various temporal resolution: 
- - I, D, M, Y for QA/AC data
- - I1 for raw data
- - Ibackup for backup
- - Ixxx for data in the same gauging statio from other manager (ONG, hydrological service, electricity compagny)...
- 
+For instance, the parameter **Q** (Water discharge) can have different temporal resolutions and contexts:  
+- **I, D, M, Y** → QA/QC data at Instantaneous, Daily, Monthly, or Yearly steps  
+- **I1** → Raw data  
+- **Ibackup** → Backup data  
+- **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)  
+
  When the user creates a station, he must choose and configure a parameter set, with temporal resolutions
  
 <img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
