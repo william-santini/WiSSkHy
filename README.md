@@ -77,7 +77,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 
 ## Database structure
-The WiSSkHy database is based on the **Datastream concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
+The WiSSkHy database is structured around the **Datastream concept**, as formalized by the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html). Discrete measurements (punctual or spot samples) are also handled as datastreams, since each measurement is associated with a date.
 
 > [!Important]
 >A datastream is defined as the combination of a **parameter** (Observed Property), a **temporal record** and a **sensor** (origin):
