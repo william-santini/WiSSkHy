@@ -51,7 +51,7 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 
 ## Project Status
 
-WiSSkHy is actively under development. The current progress is estimated at **70% complete**.
+WiSSkHy is actively under development. The current progress is estimated at **60% complete**.
 
 ### Features already implemented
 - Core R-Shiny Apps for database management, visualization, and analysis
