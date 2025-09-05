@@ -35,7 +35,7 @@ Beyond these core features, users can:
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
-# Collaborative Use of the Database
+## Collaborative Use of the Database
 
 SQLite supports multi-user access, but with important limitations:  
 - **Read operations** can be performed simultaneously by multiple users.  
@@ -48,6 +48,36 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 > [!TIP] 
 > **Future development**  
 > A PostgreSQL version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.
+
+## Project Status
+
+WiSSkHy is actively under development. The current progress is estimated at **70% complete**.
+
+Progress: `[████████▌-----] 70%`
+
+### Features already implemented
+- Core R-Shiny Apps for database management, visualization, and analysis
+- Data import/export and quality control tools
+- Automated report generation in LaTeX and HTML
+- Support for multiple parameter types and temporal resolutions
+
+### Planned features
+- Full multi-user support with a PostgreSQL backend
+- Additional analysis modules and integration with external tools
+- Expanded collaborative features for sharing scripts and tools within the community
+
+> [!TIP]  
+> WiSSkHy continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
+
+
+
+
+
+
+## Installation
+You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
+If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
+
 
 ## Database structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
@@ -113,10 +143,6 @@ It is possible to easily configure the database using the **configuration tables
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
-
-## Installation
-You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
-If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
 ## Database
 
