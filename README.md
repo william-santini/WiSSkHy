@@ -55,8 +55,6 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 
 WiSSkHy is actively under development. The current progress is estimated at **70% complete**.
 
-![Project Progress](https://img.shields.io/badge/Progress-70%25-brightgreen)
-
 ### Features already implemented
 - Core R-Shiny Apps for database management, visualization, and analysis
 - Data import/export and quality control tools
