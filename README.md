@@ -26,8 +26,8 @@ It provides a complete workflow to support hydrological services and researchers
 The WiSSkHy Apps were created to provide access to the main tools of the WiSSkHy environment.  
 Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
-- Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
-- Use the apps to automatically generate SQL queries that can be reused in custom code.
+- Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
+- Use the apps to automatically generate SQL queries that can be reused in custom code/script.
 
 > [!NOTE]  
 > WiSSkHy not only provides access to core tools but also acts as a collaborative "Wiki":  
@@ -69,9 +69,6 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 
 > [!TIP]  
 > WiSSkHy continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
-
-
-
 
 
 ## Database structure
