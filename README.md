@@ -160,11 +160,11 @@ It is possible to easily configure the database using the **configuration tables
 
 ### Export or delete
 
-### Data cleaning
+### Cleaning
 
-### Data wrangling
+### Wrangling
 
-### Data analysis
+### Analysis
 
 
 
