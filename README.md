@@ -36,7 +36,7 @@ Beyond these core features, users can:
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
-## Collaborative Use of the Database
+## Collaborative use of the database
 
 SQLite supports multi-user access, but with important limitations:  
 - **Read operations** can be performed simultaneously by multiple users.  
@@ -50,7 +50,7 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 > **Future development**  
 > A PostgreSQL version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.
 
-## Project Status
+## Project status
 
 WiSSkHy is actively under development. The current progress is estimated at **60% complete**.
 
