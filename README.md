@@ -21,7 +21,7 @@ It provides a complete workflow to support hydrological services and researchers
   - Remote sensing data processing
   - Geochemistry
 - Data export to `.csv`, `.xlsx`, and other formats
-- Automated report generation in LaTeX, word and HTML
+- Automated report generation in LaTeX, Word, and HTML (using R Markdown and Quarto)
 
 The WiSSkHy Apps were created to provide access to the main tools of the WiSSkHy environment.  
 Beyond these core features, users can:
