@@ -55,6 +55,10 @@ WiSSkHy is actively under development. The current progress is estimated at **70
 
 Progress: `[████████▌-----] 70%`
 
+![Project Progress](https://img.shields.io/badge/Progress-70%25-brightgreen)
+
+Progress: 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜ 70%
+
 ### Features already implemented
 - Core R-Shiny Apps for database management, visualization, and analysis
 - Data import/export and quality control tools
