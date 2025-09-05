@@ -58,6 +58,8 @@ WiSSkHy is actively under development. The current progress is estimated at **70
 - Data import/export and quality control tools
 - Automated report generation in LaTeX and HTML
 - Support for multiple parameter types and temporal resolutions
+- ADCP tools
+- Rating tools
 
 ### Planned features
 - Full multi-user support with a PostgreSQL backend
