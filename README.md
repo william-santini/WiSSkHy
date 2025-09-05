@@ -100,7 +100,7 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
   - RS: Remote Sensing
   - M: Modelling
   - RSM: Combination of Remote Sensing and Modelling data
-  - R: Reonstitued
+  - R: Reconstitued
   - INT: Interpolatted
 
 
