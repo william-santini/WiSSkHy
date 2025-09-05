@@ -35,21 +35,18 @@ Beyond these core features, users can:
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
-## Collaborative Use of the Database
+# Collaborative Use of the Database
 
-SQLite allows multiple users to access the same database file, but it comes with important limitations:  
-- Concurrent write operations are restricted, meaning that only a small number of users can reliably modify the database at the same time.  
-- Simultaneous access may lead to locks or slow performance when many operations occur in parallel.  
+SQLite supports multi-user access, but with important limitations:  
+- **Read operations** can be performed simultaneously by multiple users.  
+- **Write operations** are exclusive: only one user can modify the database at a time, while others must wait until the operation is completed.  
 
-To support collaboration, WiSSkHy includes a **"Refresh Database"** button so that users can easily reload the most recent changes made by others.  
+To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so that users can always reload the most recent changes made by others.  
 
-WiSSkHy is primarily designed as a **local tool**, complementing centralized server solutions. It enables researchers to take advantage of the power of **R, Python, MATLAB**, and other tools for data quality control, analysis, and scientific exploration.  
+WiSSkHy is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python, MATLAB**, and other tools for data curation, analysis, and scientific research.  
 
 > **Future development**  
-> A PostgreSQL version of WiSSkHy is planned, which will provide a true multi-user environment with improved performance and concurrency management.
-
-
-
+> A PostgreSQL version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.
 
 ## Database structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
