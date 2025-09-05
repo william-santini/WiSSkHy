@@ -147,7 +147,7 @@ It is possible to easily configure the database using the **configuration tables
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
-# Getting Started with the WiSSkHy Apps
+# Getting started with the WiSSkHy Apps
 
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
