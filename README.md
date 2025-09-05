@@ -70,20 +70,16 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 > WiSSkHy continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
 
 
-
-
-
-
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
 If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
 
 ## Database structure
-The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
+The WiSSkHy database is based on the **Datastream concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
 > [!Important]
->A time series (ts) is defined as the combination of a **parameter** and a **temporal record**:
+>A datastream is defined as the combination of a **parameter** (Observed Property), a **temporal record** and a **sensor** (origin):
 
 - Example of **parameters**:  
   - Q = Water discharge  
@@ -102,7 +98,17 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 - **Ibackup** → Backup data  
 - **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)  
 
- When the user creates a station, he must choose and configure a parameter set, with temporal resolutions
+- Example of **sensor** (or origin)
+  - SM: Staff Meausurement
+  - S: Sensor
+  - RS: Remote Sensing
+  - M: Modelling
+  - RSM: Combination of Remote Sensing and Modelling data
+  - R: Reonstitued
+  - INT: Interpolatted
+
+
+ When the user creates a station, he must choose and configure a parameter set, with temporal resolutions and sensor (origin).
  
 <img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
 
