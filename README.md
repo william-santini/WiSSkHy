@@ -43,7 +43,7 @@ SQLite supports multi-user access, but with important limitations:
 
 To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so that users can always reload the most recent changes made by others.  
 
-WiSSkHy is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python, MATLAB**, and other tools for data curation, analysis, and scientific research.  
+WiSSkHy is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python**, and other tools for data curation, analysis, and scientific research.  
 
 > [!TIP] 
 > **Future development**  
