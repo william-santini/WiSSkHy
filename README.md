@@ -13,15 +13,15 @@ It provides a complete workflow to support hydrological services and researchers
 - Data cleaning
 - Data wrangling
 - Data visualization & exploration (interactive plots and tables)
-- Data processing and analysis with a suite of tools for:
-  - Rating curves
+- Advanced data processing and analysis with a suite of tools designed for both **operational use and research**, including:
   - ADCP measurements
-  - Solid gaugings
+  - Rating curves
+  - Sediment analysis (solid gauging, particle size distribution, etc.)
   - Flux calculation
   - Remote sensing data processing
   - Geochemistry
-- Data export to .csv, .xlsx, etc.
-- Automated report generation in LaTeX and HTML
+- Data export to `.csv`, `.xlsx`, and other formats
+- Automated report generation in LaTeX, word and HTML
 
 The WiSSkHy Apps were created to provide access to the main tools of the WiSSkHy environment.  
 Beyond these core features, users can:
