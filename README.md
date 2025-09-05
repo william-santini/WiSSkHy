@@ -52,29 +52,45 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
   - Y = Yearly  
 
  For instance, the parameter Q can have various temporal resolution: 
+ - I, D, M, Y for QA/AC data
+ - I1 for raw data
+ - Ibackup for backup
+ - Ixxx for data in the same gauging statio from other manager (ONG, hydrological service, electricity compagny)...
  
- 
- When the user creates a station, they must choose and configure a parameter set:
+ When the user creates a station, he must choose and configure a parameter set, with temporal resolutions
+
+
+
+
+ It is also possible to manage this of parameters and temporal resolution when needed:
 
 
  
 
 ### Main tables
 
+#### Stations
 
-### Annex Tables
+#### Time Series
+
+#### Data
+
+
+### Configuration Tables
 
 It is possible to easily configure the database using the **Annex tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
 
 #### Type of Stations
 
-#### Type of Time Series
+#### Temporal Resolution
+
+#### Parameters
+
+<img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
 #### Origin of the Data
 
 <img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
-
-
 
 #### Quality of the Data
 
@@ -82,9 +98,8 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 
 
 
-#### Parameters
 
-<img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
+
 
 
 ## Installation
@@ -110,6 +125,13 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ## Data management
 
+### Import Data
+
+### Export or delete data
 
 ## Tools
+
+## SQL automatic query generator
+
+
 
