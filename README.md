@@ -38,7 +38,7 @@ Beyond these core features, users can:
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
-## Database Structure
+## Database structure
 The WiSSkHy database is based on the **time series concept**. Discrete (punctual, or spot) measurements are also treated as time series, since each measurement is associated with a date.
 
 > [!Important]
@@ -86,11 +86,11 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 
 #### Type of Stations
 
-#### Temporal Resolution
-
 #### Parameters
 
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
+
+#### Temporal records
 
 #### Origin of the Data
 
@@ -101,26 +101,16 @@ It is possible to easily configure the database using the **Annex tables**. Thes
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
 
-
-
-
-
-
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
 If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
-## Database management
+## Database Management
 
-![image](https://github.com/user-attachments/assets/d1e9c9dd-d984-45d8-b551-fcca412655c0)
-  
-![image](https://github.com/user-attachments/assets/81cc87d5-0a6f-4f83-92d0-a5151a946691)
-  
-![image](https://github.com/user-attachments/assets/f48482c7-6c99-40d2-8ad3-a6adcd3dbc8e)
-  
-![image](https://github.com/user-attachments/assets/2059dbba-1017-447b-a18a-47fda594a6cc)
-  
-![image](https://github.com/user-attachments/assets/37fd623e-2f08-4731-aea2-f100496b4a10)
+### Start by creating or loading a WiSSkHy database
+
+<img width="1907" height="887" alt="image" src="https://github.com/user-attachments/assets/9a990657-91f9-41e6-b531-38f15d1023e9" />
+
 
 ### Create a new station
 
@@ -129,9 +119,13 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ## Data management
 
-### Import Data
+### Import data
 
-### Export or delete data
+### Export or delete
+
+### Data cleaning
+
+### Data wrangling
 
 ## Tools
 
