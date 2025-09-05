@@ -196,14 +196,24 @@ William Santini (IRD - France)
 - William Santini (IRD - France)
 - Alex Delort-Ylla (IRD - France)
 
-## Apps and database development
-- Alex Delort-Ylla (IRD - France)
-- William Santini (IRD - France)
-
-## Tools development
+## Apps and Database Development
 - Alex Delort-Ylla (IRD - France)
 - William Santini (IRD - France)
 - Andre Luis Martinelli Real dos Santos (SGB - Brazil)
+
+## Team / Contributors to Tools Development
+- Alex Delort-Ylla (IRD - France)
+- William Santini (IRD - France)
+- Andre Luis Martinelli Real dos Santos (SGB - Brazil)
+
+## Technical Advisory
+- William Santini (IRD - France)
+- Andre Luis Martinelli Real dos Santos (SGB - Brazil)
+- Oscar Nain Puita Rodriguez (SENAMHI - Bolivia)
+- Nilton Fuertes (SENAMHI - Peru)
+- Wilmer Guachamín Acero (INAMHI - Ecuador)
+
+
 
 ## How to cite
 .....
