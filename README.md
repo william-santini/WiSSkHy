@@ -2,8 +2,6 @@
 Wiki Soft Suite for Hydrology   
 Distill your data. Hydrate your science...
 
-![Project Progress](https://img.shields.io/badge/Progress-70%25-brightgreen)
-
 ## The WiSSkHy R-Shiny Apps
 WiSSkHy is a **local** environment built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools.
 
