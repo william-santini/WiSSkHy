@@ -33,9 +33,6 @@ Beyond these core features, users can:
 > users can contribute, share, and reuse tools or scripts within the community.  
 > This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common WiSSkHy database structure.
 
-
-
-
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
 ## Database structure
@@ -46,8 +43,8 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
 
 - Example of parameters:  
   - Q = Water discharge  
-  - Ct = Total Suspended Sediment Concentration  
-  - ...  
+  - Cst = Total Suspended Sediment Concentration  
+  - ...
 
 - Example of temporal records:  
   - I = Instantaneous  
@@ -62,6 +59,8 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
  - Ixxx for data in the same gauging statio from other manager (ONG, hydrological service, electricity compagny)...
  
  When the user creates a station, he must choose and configure a parameter set, with temporal resolutions
+ 
+<img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
 
 
 
