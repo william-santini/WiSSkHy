@@ -22,14 +22,17 @@ It provides a complete workflow to support hydrological services and researchers
 - Data export to .csv, .xlsx, etc.
 - Automated report generation in LaTeX and HTML
 
-The WiSSkHy Apps was created to provide access to the main tools of the WiSSkHy environment.  
-Users can also:
-- Add new tools directly in R-Shiny, either within the existing Apps or independently.
+The WiSSkHy Apps were created to provide access to the main tools of the WiSSkHy environment.  
+Beyond these core features, users can:
+- Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, MATLAB, or other languages to work with the WiSSkHy SQLite database.
-- Use the Apps to automatically generate SQL queries that can be reused in custom code.
+- Use the apps to automatically generate SQL queries that can be reused in custom code.
 
-> [!Note]  
-> This flexibility allows users to integrate their own processing, analysis, or visualization workflows while leveraging the common WiSSkHy database structure.
+> [!NOTE]  
+> WiSSkHy not only provides access to core tools but also acts as a collaborative "Wiki":  
+> users can contribute, share, and reuse tools or scripts within the community.  
+> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common WiSSkHy database structure.
+
 
 
 
