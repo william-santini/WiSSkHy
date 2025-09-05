@@ -131,7 +131,7 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
 
-#### FeatureofInterest (FOI)
+#### FeatureofInterest (Station Type)
 
 #### Parameters (ObservedProperty)
 
