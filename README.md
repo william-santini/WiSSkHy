@@ -66,9 +66,9 @@ The WiSSkHy database is based on the **time series concept**. Discrete (punctual
   - M = Monthly  
   - Y = Yearly  
 
-For instance, the parameter **Q** (Water discharge) can have different temporal resolutions and contexts:  
+For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts:  
 - **I, D, M, Y** → QA/QC data at Instantaneous, Daily, Monthly, or Yearly steps  
-- **I1** → Raw data  
+- **Iraw** → Raw data  
 - **Ibackup** → Backup data  
 - **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)  
 
