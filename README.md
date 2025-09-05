@@ -118,7 +118,7 @@ It is possible to easily configure the database using the **configuration tables
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
 If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
-## Database Management
+## Database
 
 ### Start by creating or loading a WiSSkHy database
 
@@ -130,7 +130,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Create a new parameter set
 
-## Data management
+## Data
 
 ### Import
 
@@ -140,7 +140,11 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Data wrangling
 
-## Tools
+### Data analysis
+
+
+
+## Advanced tools
 
 ### ADCP
 
@@ -151,8 +155,6 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ### Remote-sensing
 
 ### Geochemistry
-
-### Data analysis
 
 ### External tools
 
