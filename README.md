@@ -189,6 +189,39 @@ It is possible to easily configure the database using the **configuration tables
 ## Query generator
 
 
+# Credits
+
+## Coordination
+William Santini (IRD - France)
+
+## Conceptualization
+- William Santini (IRD - France)
+- Alex Delort-Ylla (IRD - France)
+
+## Apps and database development
+- Alex Delort-Ylla (IRD - France)
+- William Santini (IRD - France)
+
+## Tools development
+- Alex Delort-Ylla (IRD - France)
+- William Santini (IRD - France)
+- Andre Luis Martinelli Real dos Santos (SGB - Brazil)
+
+## How to cite
+.....
+
+## Funding
+This application was developed with the support of:
+IRD, SGB, 
+
+## Source Code
+Available on GitHub.
+
+## License
+This project is licensed under the XXX License.
+
+
+
 
 
 
