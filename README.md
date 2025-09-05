@@ -95,7 +95,7 @@ For instance, the parameter **Q** (Water discharge) can have different temporal 
 
 ### Configuration Tables
 
-It is possible to easily configure the database using the **Annex tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
+It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
 
 #### Type of Stations
 
