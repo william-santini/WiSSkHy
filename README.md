@@ -218,6 +218,10 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ## Query generator Tab
 
 
+# How to create/add a module?
+
+
+
 # Credits
 
 ## Coordination
