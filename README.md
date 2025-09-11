@@ -82,11 +82,26 @@ The WiSSkHy database is structured around the **Datastream concept**, as formali
   - Cst = Total Suspended Sediment Concentration  
   - ...
 
-- Example of **temporal records**:  
-  - I = Instantaneous  
-  - D = Daily  
-  - M = Monthly  
-  - Y = Yearly  
+- Example of **temporal records** (Time Series Resolution)
+
+| Code | Label                | Definition                                                                 |
+|------|----------------------|----------------------------------------------------------------------------|
+| **I** | **Instantaneous**   | Value without any temporal aggregation (e.g., sub-hourly, hourly, or irregular intervals). |
+| **D** | **Daily**           | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
+| **M** | **Monthly**         | Values aggregated over a calendar month.                                  |
+| **Y** | **Yearly**          | Values aggregated over a calendar or hydrological year.                                   |
+
+
+
+
+
+
+
+
+
+
+
+  
 
 For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts:  
 - **I, D, M, Y** → QA/QC data at Instantaneous, Daily, Monthly, or Yearly steps  
