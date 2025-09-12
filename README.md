@@ -109,6 +109,11 @@ A station can be mobile --> see location
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
+
+
+
+
+
 ## Configuration tables
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
@@ -161,7 +166,7 @@ The `origin` field is used to group families of sensors and to quickly identify 
 
 Default `origin` codes in the WiSSkHy database:
 
-| origin  | label                                     |
+| Code  | label                                     |
 |-------|-------------------------------------------|
 | SM    | Staff Measurement                         |
 | S     | Sensor                                    |
