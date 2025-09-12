@@ -85,7 +85,7 @@ Discrete measurements (punctual or spot samples) are also handled as time series
 > Where:  
 > [temporal record] = [ts_name] + [ts_temporal_resolution]
 
-- Example of **parameter**:  
+- Default **parameters**
   - Q = Water discharge  
   - Cst = Total Suspended Sediment Concentration  
   - ...
