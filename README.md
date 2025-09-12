@@ -35,6 +35,10 @@ Beyond these core features, users can:
 > users can contribute, share, and reuse tools or scripts within the community.  
 > This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common WiSSkHy database structure.
 
+
+
+
+
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
 ## Collaborative use of the database
@@ -73,7 +77,14 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 
 
 ## Database structure
-The WiSSkHy database is structured around the **Datastream concept**, as formalized by the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html). Discrete measurements (punctual or spot samples) are also handled as datastreams, since each measurement is associated with a date.
+
+WiSSkHy manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, WiSSkHy relies on the concept of **time series** rather than direct **datastreams**. 
+However, each time series can be associated with a sensor when relevant, and the database structure makes it possible to map WiSSkHy tables to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). WiSSkHy can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.
+
+Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
+
+
+
 
 > [!Important]
 >A datastream is defined as the combination of a **parameter** (Observed Property), a **temporal record** and a **sensor** (origin):
@@ -236,15 +247,24 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 # How to create/add a module?
 
-
-
 ### Alignment with OGC SensorThings API
 
 The WiSSkHy database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), which is based on ISO 19156. This alignment ensures interoperability with widely recognized international standards for handling observation and measurement data, and provides a solid foundation for integrating WiSSkHy with other systems and platforms in the hydrological and environmental sciences.
 
+table of correspondance
+
+SQL Query to obtain the Datastream
+
+
+
+
+
+
 ### Alignment with FAIR Principles
 
-WiSSkHy has been designed in accordance with the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable).  
+WiSSkHy supports the implementation of the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable) for hydrological data.  
+By adopting OGC/ISO standards, using open formats, and enabling reproducible workflows, the system helps ensure that data managed with WiSSkHy can be more easily shared, integrated, and reused across research communities.
+
 In particular, the emphasis is placed on:  
 - **Interoperability**, by adopting OGC/ISO data models and open formats;  
 - **Reusability**, through the use of open-source tools, transparent database structures, and reproducible workflows.  
