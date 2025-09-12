@@ -47,7 +47,7 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 
 > [!TIP]  
 > **Future development**  
-> A PostgreSQL version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.  
+> A **PostgreSQL** version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.  
 > This version will follow all the FAIR principles (Findable, Accessible, Interoperable, Reusable).
 
 
@@ -74,16 +74,16 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 
 ## Database structure
 
-WiSSkHy manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, WiSSkHy relies on the concept of **time series** rather than direct **datastreams**. 
+WiSSkHy manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, WiSSkHy relies on the concept of **time series** rather than direct **datastreams** (as in the SensorThings norm). 
 However, each time series can be associated with a sensor when relevant, and the database structure makes it possible to map WiSSkHy tables to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). WiSSkHy can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.
 
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
-
-
-
 > [!Important]
->A datastream is defined as the combination of a **parameter** (Observed Property), a **temporal record** and a **sensor** (origin):
+> A **time series (ts)** is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:
+> [time series] = [ts_parameter] + [ts_temporal_record]
+> Where:
+> [temporal record] = [ts_name] + [ts_resolution]
 
 - Example of **parameters**:  
   - Q = Water discharge  
@@ -145,9 +145,11 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 
 ### Location
 
-#### Datastream (Time Series)
+#### Time Series
 
-#### Observation (Data)
+#### Data (Observations)
+In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
+Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
 
 ### Configuration Tables
