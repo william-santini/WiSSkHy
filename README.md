@@ -90,16 +90,19 @@ Discrete measurements (punctual or spot samples) are also handled as time series
   - Cst = Total Suspended Sediment Concentration  
   - ...
 
-- Example of **time series resolution**
+- Default **time series resolutions**
 
-| Code | Label                | Definition                                                                 |
-|------|----------------------|----------------------------------------------------------------------------|
-| **I** | **Instantaneous**   | Value without any temporal aggregation (e.g., sub-hourly, hourly, or irregular intervals). |
-| **D** | **Daily**           | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
-| **M** | **Monthly**         | Values aggregated over a calendar month.                                  |
-| **Y** | **Yearly**          | Values aggregated over a calendar or hydrological year.                                   |
+| Code   | Label              | Definition                                                                 |
+|--------|--------------------|----------------------------------------------------------------------------|
+| **I**  | **Instantaneous**  | Raw value without any temporal aggregation (irregular intervals, as recorded). |
+| **ss** | **Second**         | Values recorded or aggregated at a second resolution.                      |
+| **mm** | **Minute**         | Values recorded or aggregated at a minute resolution.                      |
+| **hh** | **Hour**           | Values recorded or aggregated at an hourly resolution.                     |
+| **D**  | **Day**            | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
+| **M**  | **Month**          | Values aggregated over a calendar month.                                   |
+| **Y**  | **Year**           | Values aggregated over a calendar or hydrological year.                    |
 
-
+Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
 
 
@@ -123,6 +126,8 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
  It is also possible to manage this of parameters and temporal resolution when needed:
 
 
+## Dates management
+txt in the DB
  
 
 ### Main tables
