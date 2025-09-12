@@ -48,7 +48,7 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 > [!TIP]  
 > **Future development**  
 > A PostgreSQL version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.  
-> This version will follow all the FAIR principles.
+> This version will follow all the FAIR principles (Findable, Accessible, Interoperable, Reusable).
 
 
 ## Project status
