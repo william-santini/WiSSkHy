@@ -53,7 +53,7 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 
 ## Project status
 
-WiSSkHy is actively under development. The current progress is estimated at **60% complete**.
+`WiSSkHy` is actively under development. The current progress is estimated at **60% complete**.
 
 ### Features already implemented
 - Core R-Shiny Apps for database management, visualization, and analysis
@@ -69,76 +69,64 @@ WiSSkHy is actively under development. The current progress is estimated at **60
 - Expanded collaborative features for sharing scripts and tools within the community
 
 > [!TIP]  
-> WiSSkHy continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
+> `WiSSkHy` continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
 
 
 ## Database structure
 
-WiSSkHy manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, WiSSkHy relies on the concept of **time series** rather than direct **datastreams** (as in the SensorThings norm). 
-However, each time series can be associated with a sensor when relevant, and the database structure makes it possible to map WiSSkHy tables to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). WiSSkHy can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.
+`WiSSkHy` manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** (as in the SensorThings standart). 
+However, each time series can be associated with a sensor when relevant, and the database structure makes it possible to map `WiSSkHy` tables to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.
 
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
 > [!Important]
 > A **time series (ts)** belongs to a **station** and is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
-> [time series] = [parameter] + [name] + [temporal_resolution],
+> [time series] = [parameter] + [name] + [temporal resolution],
 > where:  
-> [temporal record] = [name] + [temporal_resolution].
+> [temporal record] = [name] + [temporal resolution].
 
-For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts (names):  
-- **Q_I_raw** → Raw data
-- **Q_I_clean** → QA/QC data at Instantaneous step
-- **Q_I_raw-XXX** → Data from the same gauging station but managed by another institution XXX (e.g., NGO, hydrological service, electricity company...)
+For instance, a same station can have many water disharge time series **Q** with different temporal resolutions and contexts (names):  
+- **Q_I_raw** → Water Discharge (Q) Instantaneous (I) Raw data (raw),
+- **Q_D_clean** → Water Discharge (Q) Daily (D) QA/QC data (clean)
+- **Q_I_raw-XXX** → Water Discharge (Q) Instantaneous (I) Raw data managed by another institution XXX (e.g., NGO, hydrological service, electricity company...) (raw-XXX).
 
-
- When the user creates a station, he must choose and configure a the attached time series, with parameter, temporal resolution, and name.
+When the user creates a station, he must choose and configure the attached time series, with parameter, temporal resolution, and name.
  
 <img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
 
+## Main tables
 
-
-
- It is also possible to manage this of parameters and temporal resolution when needed:
-
-
-## Dates management
-txt in the DB
- 
-
-### Main tables
-
-#### Table 'station' (Things)
+### Table 'station' (Things)
 
 A station can be mobile --> see location
 
 
-#### Table 'location'
+### Table 'location'
 
-#### Table 'time series'
+### Table 'time series'
 
-#### Table 'data' (Observations)
+### Table 'data' (Observations)
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
-### Configuration Tables
+## Configuration tables
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
 
-#### Table 'featureofinterest' (Station Type)
+### Table 'feature_of_interest' (Station Type)
 User can define the feature of interest of the station, which is equivalent to the station type.
 River, Lake, Meteo...
 
-#### Table 'ts_parameter' (ObservedProperty)
+### Table 'ts_parameter' (ObservedProperty)
 
 Default **parameters** in the WiSSkHy db:
   - Q = Water discharge  
   - Cst = Total Suspended Sediment Concentration  
   - ...
 
-
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
-#### Table 'ts_resolution'
+### Table 'ts_resolution'
 
 Default **time series resolutions**:
 
@@ -154,31 +142,42 @@ Default **time series resolutions**:
 
 Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
-#### Table 'data_sensor'
+
+### Table 'ts_name'
+
+
+
+
+
+### Table 'data_sensor'
 List of instruments
 
 
 
-#### Table 'data_origin'
 
-- Example of origin
-  - SM: Staff Meausurement
-  - S: Sensor
-  - RS: Remote Sensing
-  - M: Modelling
-  - RSM: Combination of Remote Sensing and Modelling data
-  - R: Reconstitued
-  - INT: Interpolatted
+#### Table `data_origin`
 
+The `origin` field is used to group families of sensors and to quickly identify the origin of an observation or data record.
 
+Default `origin` codes in the WiSSkHy database:
+- **SM**: Staff Measurement  
+- **S**: Sensor  
+- **RS**: Remote Sensing  
+- **M**: Modelling  
+- **RSM**: Combination of Remote Sensing and Modelling data  
+- **R**: Reconstructed  
+- **INT**: Interpolated  
 
-<img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
+Users can define additional custom `origin` if needed
 
 #### Table 'data_quality'
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
-# Getting started with the WiSSkHy Apps
+# Dates management
+txt in the DB
+
+# Getting started with the `WiSSkHy App`
 
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
@@ -247,6 +246,9 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ## Automatic reports Tab
 
 ## Query generator Tab
+
+
+
 
 
 # How to create/add a module?
