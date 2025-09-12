@@ -3,7 +3,7 @@ Wiki Soft Suite for Hydrology
 Distill your data. Hydrate your science...
 
 ## The WiSSkHy R-Shiny Apps
-**WiSSkHy is a local and flexible framework** built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
+**`WiSSkHy` is a local and flexible framework** built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
 
 It provides a complete workflow to support hydrological services and researchers, including:
 
@@ -29,9 +29,9 @@ Beyond these core features, users can:
 - Use the apps to automatically generate SQL queries that can be reused in custom code/script.
 
 > [!NOTE]  
-> WiSSkHy not only provides access to core tools but also acts as a collaborative "Wiki":  
+> `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
 > users can contribute, share, and reuse tools or scripts within the community.  
-> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common WiSSkHy database structure.
+> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
