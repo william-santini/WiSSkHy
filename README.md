@@ -80,7 +80,7 @@ However, each time series can be associated with a sensor when relevant, and the
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
 > [!Important]
-> A **time series (ts)** is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
+> A **time series (ts)** blelongs to a **station** and is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
 > [time series] = [ts_parameter] + [ts_temporal_record]  
 > Where:  
 > [temporal record] = [ts_name] + [ts_temporal_resolution]
