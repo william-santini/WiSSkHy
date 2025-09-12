@@ -98,7 +98,24 @@ When the user creates a station, he must choose and configure the attached time 
 
 ### Table 'station' (Things)
 
+Station name = infrastructure avec les capteurs et les équipements
 A station can be mobile --> see location
+
+
+### Table 'feature_of_interest'
+User can define the feature of interest
+feature of interest = objet étudié (river, transect, lake, basin, etc.)
+
+CREATE TABLE feature_of_interest (
+  foi_id       TEXT PRIMARY KEY,        -- UUID
+  name         TEXT NOT NULL,           -- ex. "Station Obidos"
+  description  TEXT,                    -- libre
+  encodingType TEXT DEFAULT 'application/vnd.geo+json',
+  feature      TEXT,                    -- GeoJSON: {"type":"Point","coordinates":[-55.5,-1.9]}
+  type         TEXT                     -- optionnel: "station", "cross-section", "basin", "sampling site"
+);
+
+
 
 
 ### Table 'location'
@@ -118,9 +135,7 @@ Each observation consists of a value associated with a parameter, a time, and op
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
 
-### Table 'feature_of_interest' (Station Type)
-User can define the feature of interest of the station, which is equivalent to the station type.
-River, Lake, Meteo...
+
 
 ### Table 'ts_parameter' (ObservedProperty)
 
