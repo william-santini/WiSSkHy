@@ -3,8 +3,9 @@ Wiki Soft Suite for Hydrology
 Distill your data. Hydrate your science...
 
 ## The WiSSkHy R-Shiny Apps
-WiSSkHy is a **local** and **flexible** framework built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is compatible with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) (ISO 19156-based), and follows the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable)..
-
+WiSSkHy is a **local** and **flexible** framework built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. 
+Its database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), which is based on ISO 19156.  
+WiSSkHy is designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
 
 It provides a complete workflow to support hydrological services and researchers, including:
 
@@ -236,6 +237,19 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 # How to create/add a module?
 
 
+
+### Alignment with OGC SensorThings API
+
+The WiSSkHy database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), which is based on ISO 19156. This alignment ensures interoperability with widely recognized international standards for handling observation and measurement data, and provides a solid foundation for integrating WiSSkHy with other systems and platforms in the hydrological and environmental sciences.
+
+### Alignment with FAIR Principles
+
+WiSSkHy has been designed in accordance with the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable).  
+In particular, the emphasis is placed on:  
+- **Interoperability**, by adopting OGC/ISO data models and open formats;  
+- **Reusability**, through the use of open-source tools, transparent database structures, and reproducible workflows.  
+
+While SQLite makes WiSSkHy primarily a local tool, future developments (e.g. a PostgreSQL version with server-based access) will further enhance **Accessibility** and **Findability** in multi-user and collaborative contexts.
 
 # Credits
 
