@@ -85,24 +85,9 @@ Discrete measurements (punctual or spot samples) are also handled as time series
 > Where:  
 > [temporal record] = [ts_name] + [ts_temporal_resolution]
 
-- Default **parameters**
-  - Q = Water discharge  
-  - Cst = Total Suspended Sediment Concentration  
-  - ...
 
-- Default **time series resolutions**
 
-| Code   | Label              | Definition                                                                 |
-|--------|--------------------|----------------------------------------------------------------------------|
-| **I**  | **Instantaneous**  | Raw value without any temporal aggregation (irregular intervals, as recorded). |
-| **ss** | **Second**         | Values recorded or aggregated at a second resolution.                      |
-| **mm** | **Minute**         | Values recorded or aggregated at a minute resolution.                      |
-| **hh** | **Hour**           | Values recorded or aggregated at an hourly resolution.                     |
-| **D**  | **Day**            | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
-| **M**  | **Month**          | Values aggregated over a calendar month.                                   |
-| **Y**  | **Year**           | Values aggregated over a calendar or hydrological year.                    |
 
-Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
 
 
@@ -155,27 +140,36 @@ It is possible to easily configure the database using the **configuration tables
 User can define the feature of interest of the station, which is equivalent to the station type.
 River, Lake, Meteo...
 
+#### Table 'ts_parameter' (ObservedProperty)
 
-#### Table 'parameter' (ObservedProperty)
+Default **parameters** in the WiSSkHy db:
+  - Q = Water discharge  
+  - Cst = Total Suspended Sediment Concentration  
+  - ...
+
 
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
-#### Table 'temporal_record'
+#### Table 'ts_resolution'
 
+Default **time series resolutions**:
 
+| Code   | Label              | Definition                                                                 |
+|--------|--------------------|----------------------------------------------------------------------------|
+| **I**  | **Instantaneous**  | Raw value without any temporal aggregation (irregular intervals, as recorded). |
+| **ss** | **Second**         | Values recorded or aggregated at a second resolution.                      |
+| **mm** | **Minute**         | Values recorded or aggregated at a minute resolution.                      |
+| **hh** | **Hour**           | Values recorded or aggregated at an hourly resolution.                     |
+| **D**  | **Day**            | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
+| **M**  | **Month**          | Values aggregated over a calendar month.                                   |
+| **Y**  | **Year**           | Values aggregated over a calendar or hydrological year.                    |
 
-
-
-
-
-
-
-
-
-
-
+Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
 #### Table 'sensor'
+List of instruments
+
+
 
 #### Table 'origin'
 
