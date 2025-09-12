@@ -86,15 +86,12 @@ Discrete measurements (punctual or spot samples) are also handled as time series
 > [temporal record] = [name] + [temporal_resolution].
 
 For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts (names):  
-- **Q_I_raw** → Raw data  
+- **Q_I_raw** → Raw data
 - **Q_I_clean** → QA/QC data at Instantaneous step
 - **Q_I_raw-XXX** → Data from the same gauging station but managed by another institution XXX (e.g., NGO, hydrological service, electricity company...)
 
 
-
-
-
- When the user creates a station, he must choose and configure a parameter set, with temporal resolutions and sensor (origin).
+ When the user creates a station, he must choose and configure a the attached time series, with parameter, temporal resolution, and name.
  
 <img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
 
@@ -110,18 +107,16 @@ txt in the DB
 
 ### Main tables
 
-#### Station (Things)
+#### Table 'station' (Things)
 
 A station can be mobile --> see location
 
 
-#### Location
+#### Table 'location'
 
-#### Time Series
+#### Table 'time series'
 
-
-
-#### Data (Observations)
+#### Table 'data' (Observations)
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
@@ -159,12 +154,12 @@ Default **time series resolutions**:
 
 Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
-#### Table 'sensor'
+#### Table 'data_sensor'
 List of instruments
 
 
 
-#### Table 'origin'
+#### Table 'data_origin'
 
 - Example of origin
   - SM: Staff Meausurement
@@ -179,7 +174,7 @@ List of instruments
 
 <img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
 
-#### Table 'quality'
+#### Table 'data_quality'
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
