@@ -160,13 +160,17 @@ List of instruments
 The `origin` field is used to group families of sensors and to quickly identify the origin of an observation or data record.
 
 Default `origin` codes in the WiSSkHy database:
-- **SM**: Staff Measurement  
-- **S**: Sensor  
-- **RS**: Remote Sensing  
-- **M**: Modelling  
-- **RSM**: Combination of Remote Sensing and Modelling data  
-- **R**: Reconstructed  
-- **INT**: Interpolated  
+
+| origin  | label                                     |
+|-------|-------------------------------------------|
+| SM    | Staff Measurement                         |
+| S     | Sensor                                    |
+| RS    | Remote Sensing                            |
+| M     | Modelling                                 |
+| RSM   | Combination of Remote Sensing and Modelling data |
+| R     | Reconstructed                             |
+| INT   | Interpolated                              |
+
 
 Users can define additional custom `origin` if needed
 
