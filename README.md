@@ -80,17 +80,17 @@ However, each time series can be associated with a sensor when relevant, and the
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
 > [!Important]
-> A **time series (ts)** is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:
-> [time series] = [ts_parameter] + [ts_temporal_record]
-> Where:
-> [temporal record] = [ts_name] + [ts_resolution]
+> A **time series (ts)** is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
+> [time series] = [ts_parameter] + [ts_temporal_record]  
+> Where:  
+> [temporal record] = [ts_name] + [ts_temporal_resolution]
 
-- Example of **parameters**:  
+- Example of **parameter**:  
   - Q = Water discharge  
   - Cst = Total Suspended Sediment Concentration  
   - ...
 
-- Example of **temporal records** (Time Series Resolution)
+- Example of **time series resolution**
 
 | Code | Label                | Definition                                                                 |
 |------|----------------------|----------------------------------------------------------------------------|
@@ -103,28 +103,14 @@ Discrete measurements (punctual or spot samples) are also handled as time series
 
 
 
-
-
-
-
-
-
-  
-
 For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts:  
 - **I, D, M, Y** → QA/QC data at Instantaneous, Daily, Monthly, or Yearly steps  
 - **Iraw** → Raw data  
-- **Ibackup** → Backup data  
-- **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)  
+- **Iclean** → Cleaned data 
+- **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)
 
-- Example of **sensor** (or origin)
-  - SM: Staff Meausurement
-  - S: Sensor
-  - RS: Remote Sensing
-  - M: Modelling
-  - RSM: Combination of Remote Sensing and Modelling data
-  - R: Reconstitued
-  - INT: Interpolatted
+
+
 
 
  When the user creates a station, he must choose and configure a parameter set, with temporal resolutions and sensor (origin).
@@ -141,9 +127,9 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 
 ### Main tables
 
-#### Thing (Station)
+#### Station (Things)
 
-### Location
+#### Location
 
 #### Time Series
 
@@ -151,24 +137,39 @@ For instance, the parameter **Q** (water discharge) can have different temporal 
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
-
 ### Configuration Tables
 
-It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the homogeneity of the database.
+It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
 
-#### FeatureofInterest (Station Type)
+#### Table 'featureofinterest' (Station Type)
+User can define the feature of interest of the station, which is equivalent to the station type.
+River, Lake, Meteo...
 
-#### Parameters (ObservedProperty)
+
+#### Table 'parameter' (ObservedProperty)
 
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
-#### Temporal records
+#### Table 'temporal_record'
 
-#### Sensor (Origin)
+#### Table 'sensor'
+
+#### Table 'origin'
+
+- Example of origin
+  - SM: Staff Meausurement
+  - S: Sensor
+  - RS: Remote Sensing
+  - M: Modelling
+  - RSM: Combination of Remote Sensing and Modelling data
+  - R: Reconstitued
+  - INT: Interpolatted
+
+
 
 <img width="1607" height="510" alt="image" src="https://github.com/user-attachments/assets/95a7ee5d-13e4-4a43-8165-c8f2d3fe8581" />
 
-#### Quality
+#### Table 'quality'
 
 <img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
 
