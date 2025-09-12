@@ -80,22 +80,15 @@ However, each time series can be associated with a sensor when relevant, and the
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
 > [!Important]
-> A **time series (ts)** blelongs to a **station** and is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
-> [time series] = [ts_parameter] + [ts_temporal_record]  
-> Where:  
-> [temporal record] = [ts_name] + [ts_temporal_resolution]
+> A **time series (ts)** belongs to a **station** and is defined as the combination of a **parameter** (Observed Property) and a **temporal record**:  
+> [time series] = [parameter] + [name] + [temporal_resolution],
+> where:  
+> [temporal record] = [name] + [temporal_resolution].
 
-
-
-
-
-
-
-For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts:  
-- **I, D, M, Y** → QA/QC data at Instantaneous, Daily, Monthly, or Yearly steps  
-- **Iraw** → Raw data  
-- **Iclean** → Cleaned data 
-- **Ixxx** → Data from the same gauging station but managed by another institution (e.g., NGO, hydrological service, electricity company)
+For instance, the parameter **Q** (water discharge) can have different temporal resolutions and contexts (names):  
+- **Q_I_raw** → Raw data  
+- **Q_I_clean** → QA/QC data at Instantaneous step
+- **Q_I_raw-XXX** → Data from the same gauging station but managed by another institution XXX (e.g., NGO, hydrological service, electricity company...)
 
 
 
