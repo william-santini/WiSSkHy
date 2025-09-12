@@ -72,10 +72,20 @@ WiSSkHy is primarily designed as a **local tool**, complementing centralized ser
 > `WiSSkHy` continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
 
 
-## Database structure
+## Database Structure
 
-`WiSSkHy` manages stations with observations (or data) coming from sensors (e.g., limnigraphs, ADCP) as well as derived data (e.g., discharge, sediment fluxes). Since derived data are not directly produced by sensors, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** (as in the SensorThings standart). 
-However, each time series can be associated with a sensor when relevant, and the database structure makes it possible to map `WiSSkHy` tables to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.
+`WiSSkHy` manages **stations** as operational entities (hydrological sites equipped with sensors or used for field campaigns) and links them to **features of interest (FOI)**, i.e. the real-world entities being observed (rivers, cross-sections, basins, lakes, transects...).  
+
+The database stores both:
+- **Direct observations** coming from sensors (e.g., limnigraphs, ADCP), and  
+- **Derived data** (e.g., discharge, sediment fluxes), which are not produced by a physical sensor but calculated from raw data.  
+
+Because of this, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** as defined in the SensorThings standard. However, each time series can still be associated with a sensor when relevant.  
+
+The database structure makes it possible to map `WiSSkHy` entities (stations, time series, observations, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
+
+**UUIDs** are assigned to each core entity (`station`, `feature_of_interest`, `time_series`, `observation`, `discrete_sampling`, etc.) to guarantee uniqueness and to facilitate merging of databases from different sources without conflicts.
+
 
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
