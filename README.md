@@ -134,9 +134,14 @@ txt in the DB
 
 #### Station (Things)
 
+A station can be mobile --> see location
+
+
 #### Location
 
 #### Time Series
+
+
 
 #### Data (Observations)
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
@@ -156,6 +161,19 @@ River, Lake, Meteo...
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
 #### Table 'temporal_record'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Table 'sensor'
 
@@ -200,7 +218,7 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Import
 
-### Export or delete
+### Clean and Export
 
 ### Cleaning
 
