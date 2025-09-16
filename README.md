@@ -106,7 +106,7 @@ When the user creates a station, he must choose and configure the attached time 
 
 ## Main tables
 
-### Table 'station' (Things)
+### Table 'things' 
 
 Station name = infrastructure avec les capteurs et les équipements
 A station can be mobile --> see location
@@ -124,8 +124,6 @@ CREATE TABLE feature_of_interest (
   feature      TEXT,                    -- GeoJSON: {"type":"Point","coordinates":[-55.5,-1.9]}
   type         TEXT                     -- optionnel: "station", "cross-section", "basin", "sampling site"
 );
-
-
 
 
 ### Table current 'location'
@@ -196,12 +194,23 @@ Default `origin` codes in the WiSSkHy database:
 
 Users can define additional custom `origin` if needed
 
-#### Table 'quality'
+#### Table `quality`
 
-| Code  | label                                     |
-|-------|-------------------------------------------|
-| ok    | ok                                        |
-| D     | Doubtfull                                 |
+The table `quality` can be customized according to the quality criteria defined by each institute.  
+It allows users to specify standardized codes and their corresponding labels, which can then be used consistently across datasets.
+
+| Code | Label        | Description (optional)                           |
+|------|-------------|--------------------------------------------------|
+| ok   | OK          | Data is validated and considered reliable        |
+| DBT  | Doubtful    | Data may be erroneous or uncertain               |
+| P    | Partial     | Data series is incomplete or partially valid     |
+| CUM  | Cumulative  | Data represents cumulative values (e.g. totals)  |
+
+👉 Notes:  
+- Each institute can extend this table with additional codes, as long as they remain unique.  
+- `Code` is the reference used in other tables (foreign keys).  
+- `Label` is a short description displayed in the interface or reports.  
+- An optional `Description` column can be added for more detailed explanations if needed.  
 
 
 # Dates management
