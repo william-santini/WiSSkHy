@@ -3,7 +3,7 @@ Wiki Soft Suite for Hydrology
 Distill your data. Hydrate your science...
 
 ## The WiSSkHy R-Shiny Apps
-**`WiSSkHy` is a local and flexible framework** built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
+**`WiSSkHy` is a local and flexible framework** built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
 
 It provides a complete workflow to support hydrological services and researchers, including:
 
@@ -22,7 +22,7 @@ It provides a complete workflow to support hydrological services and researchers
 - Data export to `.csv`, `.xlsx`, and other formats
 - Automated report generation in LaTeX, Word, and HTML (using R Markdown and Quarto)
 
-The **WiSSkHy Apps** were created to provide access to the main tools of the WiSSkHy environment.  
+The `WiSSkHy App` was created to provide access to the main tools of the `WiSSkHy` environment.  
 Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
@@ -82,7 +82,7 @@ The database stores both:
 
 Because of this, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** as defined in the SensorThings standard. However, each time series can still be associated with a sensor when relevant.  
 
-The database structure makes it possible to map `WiSSkHy` entities (stations, time series, observations, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
+The database structure makes it possible to map `WiSSkHy` entities (stations, time series, observations, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **conceptually aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
 
 **UUIDs** are assigned to each core entity (`station`, `feature_of_interest`, `time_series`, `observation`, `discrete_sampling`, etc.) to guarantee uniqueness and to facilitate merging of databases from different sources without conflicts.
 
@@ -128,7 +128,9 @@ CREATE TABLE feature_of_interest (
 
 
 
-### Table 'location'
+### Table current 'location'
+
+### Table 'historical_location'
 
 ### Table 'time series'
 
@@ -137,15 +139,9 @@ In WiSSkHy, what is referred to as *data* corresponds to the concept of *observa
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
 
-
-
-
-
 ## Configuration tables
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
-
-
 
 ### Table 'ts_parameter' (ObservedProperty)
 
@@ -172,20 +168,15 @@ Default **time series resolutions**:
 
 Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
-
 ### Table 'ts_name'
 
 
+### Table 'sensor'
+List of instruments used to collect the data.
+ex: Staff gage N°1032_SENAMHI, ADCP RiverPro 600 kHz, ...
 
 
-
-### Table 'data_sensor'
-List of instruments
-
-
-
-
-#### Table `data_origin`
+#### Table `origin`
 
 The `origin` field is used to group families of sensors and to quickly identify the origin of an observation or data record.
 
@@ -194,19 +185,24 @@ Default `origin` codes in the WiSSkHy database:
 | Code  | label                                     |
 |-------|-------------------------------------------|
 | SM    | Staff Measurement                         |
-| S     | Sensor                                    |
+| PS    | Physical Sensor                           |
+| WG    | Water Gauging                             |
+| DS    | Discrete Sampling                         |
 | RS    | Remote Sensing                            |
 | M     | Modelling                                 |
 | RSM   | Combination of Remote Sensing and Modelling data |
 | R     | Reconstructed                             |
 | INT   | Interpolated                              |
 
-
 Users can define additional custom `origin` if needed
 
-#### Table 'data_quality'
+#### Table 'quality'
 
-<img width="1600" height="327" alt="image" src="https://github.com/user-attachments/assets/95ae4ef9-2f3b-47e0-bb40-7995f8cc9890" />
+| Code  | label                                     |
+|-------|-------------------------------------------|
+| ok    | ok                                        |
+| D     | Doubtfull                                 |
+
 
 # Dates management
 txt in the DB
