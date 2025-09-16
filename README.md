@@ -101,8 +101,7 @@ For instance, a same station can have many water disharge time series **Q** with
 - **Q_I_raw-XXX** → Water Discharge (Q) Instantaneous (I) Raw data managed by another institution XXX (e.g., NGO, hydrological service, electricity company...) (raw-XXX).
 
 When the user creates a station, he must choose and configure the attached time series, with parameter, temporal resolution, and name.
- 
-<img width="1910" height="995" alt="image" src="https://github.com/user-attachments/assets/66e98cc3-4e0f-4d3e-9900-0a31902fd388" />
+
 
 ## Main tables
 
