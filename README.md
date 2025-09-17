@@ -35,7 +35,7 @@ Beyond these core features, users can:
 
 ![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
-## Collaborative use of the database
+## Collaborative use of the database `WiSSkHy-db`
 
 SQLite supports multi-user access, but with important limitations:  
 - **Read operations** can be performed simultaneously by multiple users.  
@@ -204,11 +204,6 @@ It allows users to specify standardized codes and their corresponding labels, wh
 | P    | Partial     | Data series is incomplete or partially valid     |
 | CUM  | Cumulative  | Data represents cumulative values (e.g. totals)  |
 
-👉 Notes:  
-- Each institute can extend this table with additional codes, as long as they remain unique.  
-- `Code` is the reference used in other tables (foreign keys).  
-- `Label` is a short description displayed in the interface or reports.  
-- An optional `Description` column can be added for more detailed explanations if needed.  
 
 ### SQL Views
 
@@ -237,7 +232,7 @@ These views:
 # Dates management
 txt in the DB
 
-# Getting started with the `WiSSkHy App`
+# Getting started with the `WiSSkHy-App`
 
 ## Installation
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
@@ -245,15 +240,20 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ## Database tab
 
-### Start by creating or loading a WiSSkHy database
+### Start by creating or loading a `WiSSkHy-db`
 
-<img width="1907" height="887" alt="image" src="https://github.com/user-attachments/assets/9a990657-91f9-41e6-b531-38f15d1023e9" />
+### Thing (station or platform)
+
+### Time series
+
+### Configuration tables
+
+### Main tables
+
+### Other tables
 
 
-### Create a new station/Thing
 
-
-### Create a new parameter set
 
 ## Data Tab
 
@@ -261,12 +261,11 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Clean and Export
 
-### Cleaning
+### Gap filling
 
 ### Wrangling
 
 ### Summary & Visualization
-
 
 
 ## Tools Tab
