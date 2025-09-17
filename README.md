@@ -104,13 +104,13 @@ When the user creates a station, he must choose and configure the attached time 
 
 ## Main tables
 
-### Table 'things' 
+### Table `things` 
 
 Station name = infrastructure avec les capteurs et les équipements
 A station can be mobile --> see location
 
 
-### Table 'feature_of_interest'
+### Table `feature_of_interest`
 User can define the feature of interest
 feature of interest = objet étudié (river, transect, lake, basin, etc.)
 
@@ -124,13 +124,13 @@ CREATE TABLE feature_of_interest (
 );
 
 
-### Table current 'location'
+### Table current `location`
 
-### Table 'historical_location'
+### Table `historical_location`
 
-### Table 'time series'
+### Table `time series`
 
-### Table 'data' (Observations)
+### Table `data` (Observations)
 In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
 Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
 
@@ -139,7 +139,7 @@ Each observation consists of a value associated with a parameter, a time, and op
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
 
-### Table 'ts_parameter' (ObservedProperty)
+### Table `ts_parameter` (ObservedProperty)
 
 Default **parameters** in the WiSSkHy db:
   - Q = Water discharge  
@@ -148,7 +148,7 @@ Default **parameters** in the WiSSkHy db:
 
 <img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
 
-### Table 'ts_resolution'
+### Table `ts_resolution`
 
 Default **time series resolutions**:
 
@@ -164,15 +164,15 @@ Default **time series resolutions**:
 
 Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
 
-### Table 'ts_name'
+### Table `ts_name`
 
 
-### Table 'sensor'
+### Table `sensor`
 List of instruments used to collect the data.
 ex: Staff gage N°1032_SENAMHI, ADCP RiverPro 600 kHz, ...
 
 
-#### Table `origin`
+### Table `origin`
 
 The `origin` field is used to group families of sensors and to quickly identify the origin of an observation or data record.
 
@@ -192,7 +192,7 @@ Default `origin` codes in the WiSSkHy database:
 
 Users can define additional custom `origin` if needed
 
-#### Table `quality`
+### Table `quality`
 
 The table `quality` can be customized according to the quality criteria defined by each institute.  
 It allows users to specify standardized codes and their corresponding labels, which can then be used consistently across datasets.
@@ -210,17 +210,28 @@ It allows users to specify standardized codes and their corresponding labels, wh
 - `Label` is a short description displayed in the interface or reports.  
 - An optional `Description` column can be added for more detailed explanations if needed.  
 
-# SQL views
-The `WiSSkHy db` use SQL view to provide extensive view of the data. 
+### SQL Views
 
-## 'station_view'
+The `WiSSkHy` database uses incremental IDs as primary keys instead of composite keys in order to optimize SQL joins and group operations. To provide more comprehensive and user-friendly access to the data, `WiSSkHy` relies on **SQL views**. 
+
+These views:  
+- Expose meaningful relationships between tables without requiring complex joins from the user.  
+- Combine metadata (e.g. station, platform, parameter) with observation values.  
+- Facilitate queries for analysis, reporting, and data exchange.  
+- Are especially convenient for **R-Shiny applications**, since the app can directly query a ready-to-use view instead of building and maintaining complex SQL joins in the server code.  
 
 
-## 'platform_view'
 
 
 
-## 'data_view'
+## `station_view`
+
+
+## `platform_view`
+
+
+
+## `data_view`
 
 
 # Dates management
