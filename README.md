@@ -238,7 +238,7 @@ txt in the DB
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
 If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
-## Database tab
+## Database
 
 ### Start by creating or loading a `WiSSkHy-db`
 
@@ -252,12 +252,17 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Other tables
 
+### Edit field
 
-
-
-## Data Tab
+## Data
 
 ### Import
+#### Time Series
+#### ADCP gauging
+#### PSD
+#### LISST-SL2
+#### Local database
+#### Remote Server
 
 ### Clean and Export
 
@@ -267,16 +272,13 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Summary & Visualization
 
+## Tools
 
-## Tools Tab
+### ADCP
 
-### Hydro
+### Rating tools
 
-#### ADCP
-
-#### Rating tools
-
-#### Discharge & Flux
+### Discharge & Flux
 
 ### Sediment
 
@@ -299,8 +301,6 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 #### TRIOS field measurements
 
 ### Geochemistry
-
-
 
 ## Automatic reports Tab
 
