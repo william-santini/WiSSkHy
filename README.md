@@ -22,7 +22,7 @@ It provides a complete workflow to support hydrological services and researchers
 - Data export to `.csv`, `.xlsx`, and other formats
 - Automated report generation in LaTeX, Word, and HTML (using R Markdown and Quarto)
 
-The `WiSSkHy App` was created to provide access to the main tools of the `WiSSkHy` environment.  
+The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkHy` environment.  
 Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
@@ -43,7 +43,7 @@ SQLite supports multi-user access, but with important limitations:
 
 To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so that users can always reload the most recent changes made by others.  
 
-WiSSkHy is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python**, and other tools for data curation, analysis, and scientific research.  
+`WiSSkHy` is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python**, and other tools for data curation, analysis, and scientific research.  
 
 > [!TIP]  
 > **Future development**  
