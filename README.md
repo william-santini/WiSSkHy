@@ -82,10 +82,9 @@ The database stores both:
 
 Because of this, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** as defined in the SensorThings standard. However, each time series can still be associated with a sensor when relevant.  
 
-The database structure makes it possible to map `WiSSkHy` entities (stations, time series, observations, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **conceptually aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
+The database structure makes it possible to map `WiSSkHy` entities (things, time series, data, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **conceptually aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
 
-**UUIDs** are assigned to each core entity (`station`, `feature_of_interest`, `time_series`, `observation`, `discrete_sampling`, etc.) to guarantee uniqueness and to facilitate merging of databases from different sources without conflicts.
-
+**UUIDs** are automatically assigned to each core entity (`things`, `feature_of_interest`, `time_series`, `data`, `discrete_sampling`, etc.) to guarantee uniqueness and to facilitate merging of databases from different sources without conflicts. The UUID is generated directly in the SQL code and the user don't have to care about it.
 
 Discrete measurements (punctual or spot samples) are also handled as time series, since each measurement is associated with a date.
 
@@ -210,6 +209,18 @@ It allows users to specify standardized codes and their corresponding labels, wh
 - `Code` is the reference used in other tables (foreign keys).  
 - `Label` is a short description displayed in the interface or reports.  
 - An optional `Description` column can be added for more detailed explanations if needed.  
+
+# SQL views
+The `WiSSkHy db` use SQL view to provide extensive view of the data. 
+
+## 'station_view'
+
+
+## 'platform_view'
+
+
+
+## 'data_view'
 
 
 # Dates management
