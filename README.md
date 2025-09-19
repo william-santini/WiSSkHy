@@ -118,7 +118,6 @@ Defines the different types of "things", **stations or platforms**, each identif
 | 4  | platform | V    | Vessel         | Mobile platform (e.g., ADCP vessel)          |
 | 5  | platform | D    | Drone          | Aerial platform for measurements             |
 
-### Table `things` 
 ### Table `thing`
 
 Stores the list of **stations and platforms** (the actual "things") with their identifiers, attributes, and metadata.  
@@ -133,31 +132,235 @@ Each `thing` is linked to a `thing_type`.
 | 3  | 550e8400-e29b-41d4-a716-446655440002 | PL001  | ADCP Boat           | 4             | Amazon      | Ucayali     | Ucayali |      | Peru    | TRUE      | 2018-11-05 |          | Mobile ADCP measurement unit |
 | 4  | 550e8400-e29b-41d4-a716-446655440003 | DR001  | Survey Drone        | 5             | Amazon      | Marañón     | Marañón |      | Peru    | TRUE      | 2020-03-10 |          | Drone for aerial surveys     |
 
+### Table `location`
 
+Stores the **current geographical location** of each `thing` (station or platform).  
+Each `thing` can have only **one current location** (1-to-1 relation).
 
-### Table `feature_of_interest`
-User can define the feature of interest
-feature of interest = objet étudié (river, transect, lake, basin, etc.)
+#### Example records
 
-CREATE TABLE feature_of_interest (
-  foi_id       TEXT PRIMARY KEY,        -- UUID
-  name         TEXT NOT NULL,           -- ex. "Station Obidos"
-  description  TEXT,                    -- libre
-  encodingType TEXT DEFAULT 'application/vnd.geo+json',
-  feature      TEXT,                    -- GeoJSON: {"type":"Point","coordinates":[-55.5,-1.9]}
-  type         TEXT                     -- optionnel: "station", "cross-section", "basin", "sampling site"
-);
+| id | uuid                                 | thing_id | name             | latitude  | longitude | elevation | location_geojson                                       | description              |
+|----|--------------------------------------|----------|------------------|-----------|-----------|-----------|--------------------------------------------------------|--------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440010 | 1        | Lagarto Station  | -10.7321  | -73.7652  | 230       | `{"type":"Point","coordinates":[-73.7652,-10.7321]}`   | Main hydrological station |
+| 2  | 550e8400-e29b-41d4-a716-446655440011 | 2        | Atalaya Met      | -10.7200  | -73.7500  | 240       | `{"type":"Point","coordinates":[-73.7500,-10.7200]}`   | Meteorological station   |
+| 3  | 550e8400-e29b-41d4-a716-446655440012 | 3        | ADCP Boat        | -10.7100  | -73.7700  |           | `{"type":"Point","coordinates":[-73.7700,-10.7100]}`   | Mobile ADCP unit         |
+| 4  | 550e8400-e29b-41d4-a716-446655440013 | 4        | Survey Drone     | -10.7000  | -73.7600  |           | `{"type":"Point","coordinates":[-73.7600,-10.7000]}`   | Drone for aerial surveys |
 
-
-### Table current `location`
 
 ### Table `historical_location`
 
-### Table `time series`
+Stores the **past geographical locations** of each `thing` (station or platform).  
+Unlike the `location` table (current position), this one allows tracking **changes of position over time**.
+
+#### Example records
+
+| id | uuid                                 | thing_id | name               | location_geojson                                      | time_start  | time_end    | description                 |
+|----|--------------------------------------|----------|--------------------|-------------------------------------------------------|-------------|-------------|-----------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440020 | 1        | Lagarto Station    | `{"type":"Point","coordinates":[-73.7700,-10.7350]}`  | 2005-01-01  | 2008-12-31  | Initial station location    |
+| 2  | 550e8400-e29b-41d4-a716-446655440021 | 1        | Lagarto Station    | `{"type":"Point","coordinates":[-73.7652,-10.7321]}`  | 2009-01-01  |             | Current station location    |
+| 3  | 550e8400-e29b-41d4-a716-446655440022 | 3        | ADCP Boat Mission  | `{"type":"LineString","coordinates":[[...],[...]]}`   | 2018-11-05  | 2018-11-20  | Mobile survey track (ADCP)  |
+| 4  | 550e8400-e29b-41d4-a716-446655440023 | 4        | Drone Flight Zone  | `{"type":"Polygon","coordinates":[[...]]}`            | 2020-03-10  | 2020-03-10  | Drone survey campaign       |
+
+
+### Table `observer`
+
+Stores the **people or institutions** responsible for making observations, with their contact information.
+
+#### Example records
+
+| id | uuid                                 | obs_name          | obs_address               | obs_mail                 | obs_phone     | country | obs_institute        | comment                   |
+|----|--------------------------------------|-------------------|---------------------------|--------------------------|---------------|---------|----------------------|---------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440030 | Jhonatan Perez    | Jr. Amazonas 123, Lima    | jperez@example.com       | +51 987654321 | Peru    | SENAMHI              | Field hydrologist         |
+| 2  | 550e8400-e29b-41d4-a716-446655440031 | Nilton Fuertes    | Calle Ucayali 45, Iquitos | nfuertes@example.com     | +51 912345678 | Peru    | ANA                  | Data validation officer   |
+| 3  | 550e8400-e29b-41d4-a716-446655440032 | Maria Gonzalez    | Av. Amazonia 99, Manaus   | mgonzalez@example.org    | +55 929999888 | Brazil  | INPA                 | Remote sensing specialist |
+| 4  | 550e8400-e29b-41d4-a716-446655440033 | Hydrology Dept.   | Washington DC             | hydrodept@example.org    | +1 2025550101 | USA     | USGS                 | Institutional observer    |
+
+
+### Table `thing_observer`
+
+Defines the **many-to-many relationship** between `things` (stations or platforms) and `observers` (people or institutions).  
+This allows tracking which observer was responsible for a given `thing`, and during which period.
+
+#### Example records
+
+| thing_id | observer_id | valid_from | valid_to   |
+|----------|-------------|------------|------------|
+| 1        | 1           | 2009-01-01 | 2015-12-31 |  
+| 1        | 2           | 2016-01-01 |            |  
+| 2        | 3           | 2012-06-15 |            |  
+| 3        | 4           | 2018-11-05 | 2018-11-20 |  
+
+➡️ Example use cases:  
+- **Lagarto Station (thing_id=1)** was first managed by observer 1, then by observer 2.  
+- **ADCP Boat (thing_id=3)** was associated with observer 4 only for the duration of a survey mission.  
+
+
+### Table `foi_type`
+
+Reference table that defines the different **types of Feature of Interest (FoI)** used in observations.  
+Each type has a unique identifier, a UUID, and a descriptive label.
+
+#### Example records
+
+| id | uuid                                 | name              | description                                  |
+|----|--------------------------------------|-------------------|----------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440040 | River reach       | A section of a river monitored for discharge |
+| 2  | 550e8400-e29b-41d4-a716-446655440041 | Lake              | A natural or artificial lake                 |
+| 3  | 550e8400-e29b-41d4-a716-446655440042 | Catchment area    | Drainage basin associated with a station     |
+| 4  | 550e8400-e29b-41d4-a716-446655440043 | Monitoring well   | Groundwater observation point                |
+
+
+
+### Table `feature_of_interest`
+
+Stores the different **Features of Interest (FoI)** such as rivers, lakes, or catchments that are linked to observations.  
+Each FoI is uniquely identified by a `uuid` and `code`, and classified by a `foi_type`.
+
+#### Example records
+
+| id | uuid                                 | code   | name              | foi_type_id | basin_area | geom_geojson                                        | valid_from | valid_to | description                        |
+|----|--------------------------------------|--------|-------------------|-------------|------------|----------------------------------------------------|------------|----------|------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440050 | RIV001 | Ucayali River     | 1           |            | `{"type":"LineString","coordinates":[[...],[...]]}` | 2000-01-01 |          | River reach for discharge monitoring |
+| 2  | 550e8400-e29b-41d4-a716-446655440051 | LAK001 | Lake Titicaca     | 2           | 85600      | `{"type":"Polygon","coordinates":[[...]]}`          |            |          | Transboundary natural lake          |
+| 3  | 550e8400-e29b-41d4-a716-446655440052 | CAT001 | Atalaya Catchment | 3           | 152000     | `{"type":"Polygon","coordinates":[[...]]}`          | 2010-01-01 |          | Drainage basin upstream of Atalaya  |
+| 4  | 550e8400-e29b-41d4-a716-446655440053 | GW001  | Well-23           | 4           |            | `{"type":"Point","coordinates":[-72.3,-10.7]}`      | 2018-05-01 |          | Groundwater observation well        |
+
+
+### Table `ts_parameter`
+
+Reference table that defines the **parameters** of time series (e.g., water level, discharge, sediment concentration).  
+Each parameter has a unique `uuid`, `code`, and is associated with a measurement unit.
+
+#### Example records
+
+| id | uuid                                 | code  | name                  | unit      | description                          |
+|----|--------------------------------------|-------|-----------------------|-----------|--------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440060 | Q     | Discharge             | m³/s      | River discharge                      |
+| 2  | 550e8400-e29b-41d4-a716-446655440061 | H     | Water level           | m         | Water stage / river height           |
+| 3  | 550e8400-e29b-41d4-a716-446655440062 | T     | Water temperature     | °C        | In-situ temperature                  |
+| 4  | 550e8400-e29b-41d4-a716-446655440063 | Ctot  | Sediment concentration| mg/L      | Total suspended sediment concentration |
+| 5  | 550e8400-e29b-41d4-a716-446655440064 | Cs    | Sand concentration    | mg/L      | Fraction of suspended sand           |
+
+
+### Table `ts_name`
+
+Reference table that defines **names for time series** (e.g., raw data, corrected data, simulated data).  
+A combination of `code` and `category` must be unique, allowing reuse of codes across different categories.
+
+#### Example records
+
+| id | uuid                                 | code   | name                 | category   | description                                |
+|----|--------------------------------------|--------|----------------------|------------|--------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440070 | RAW    | Raw data             | observed   | Original unprocessed data                   |
+| 2  | 550e8400-e29b-41d4-a716-446655440071 | CORR   | Corrected data       | observed   | Data corrected after quality control        |
+| 3  | 550e8400-e29b-41d4-a716-446655440072 | SIM    | Simulated discharge  | modelled   | Modelled discharge from SWAT                |
+| 4  | 550e8400-e29b-41d4-a716-446655440073 | RECON  | Reconstructed series | derived    | Gap-filled or statistically reconstructed   |
+
+
+### Table `ts_resolution`
+
+Reference table that defines the **time resolutions** of time series (e.g., instantaneous, daily, monthly).  
+Each resolution has a unique `code`.
+
+#### Example records
+
+| id | uuid                                 | code | label          | description                                 |
+|----|--------------------------------------|------|----------------|---------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440080 | I    | Instantaneous  | Original records at measurement frequency   |
+| 2  | 550e8400-e29b-41d4-a716-446655440081 | D    | Daily          | Aggregated daily averages or sums           |
+| 3  | 550e8400-e29b-41d4-a716-446655440082 | M    | Monthly        | Aggregated monthly averages or sums         |
+| 4  | 550e8400-e29b-41d4-a716-446655440083 | Y    | Yearly         | Aggregated annual averages or sums          |
+
+
+
+### Table `time_series`
+
+Stores the definition of a **time series**.  
+Each time series is uniquely identified by a `uuid` and `code`, and is linked to:  
+- a `thing` (station or platform)  
+- a `feature_of_interest` (river reach, catchment, well, etc.)  
+- a `ts_parameter` (e.g., discharge, water level)  
+- a `ts_resolution` (instantaneous, daily, etc.)  
+- a `ts_name` (raw, corrected, simulated, etc.)  
+
+#### Example records
+
+| id | uuid                                 | code       | thing_id | foi_id | parameter_id | resolution_id | ts_name_id | description                        | valid_from | valid_to |
+|----|--------------------------------------|------------|----------|--------|--------------|---------------|------------|------------------------------------|------------|----------|
+| 1  | 550e8400-e29b-41d4-a716-446655440090 | Q_D_CORR   | 1        | 1      | 1            | 2             | 2          | Corrected daily discharge at Lagarto | 2009-01-01 |          |
+| 2  | 550e8400-e29b-41d4-a716-446655440091 | H_I_RAW    | 1        | 1      | 2            | 1             | 1          | Instantaneous water level (raw)     | 2009-01-01 |          |
+| 3  | 550e8400-e29b-41d4-a716-446655440092 | Ctot_D_RECON | 2      | 3      | 4            | 2             | 4          | Reconstructed daily sediment conc.  | 2012-06-15 | 2018-12-31 |
+| 4  | 550e8400-e29b-41d4-a716-446655440093 | Q_M_SIM    | 3        | 1      | 1            | 3             | 3          | Modelled monthly discharge (SWAT)   | 2000-01-01 |          |
+
+➡️ Example composition of `code`:  
+`<parameter>_<resolution>_<name>` → e.g., **`Q_D_CORR`** = Discharge, Daily, Corrected.  
 
 ### Table `data` (Observations)
-In WiSSkHy, what is referred to as *data* corresponds to the concept of *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
-Each observation consists of a value associated with a parameter, a time, and optionally a sensor and location.
+
+In WiSSkHy, *data* corresponds to *observations* in the [OGC SensorThings API](https://docs.ogc.org/is/18-088/18-088.html).  
+Each observation is a **value linked to a time series** at a given timestamp, optionally with a sensor and a quality flag.  
+Timestamps must follow the format `YYYY-MM-DD HH:MM:SS`.
+
+#### Example records
+
+| id | ts_id | date_time           | value  | uncert_abs | uncert_rel | sensor_id | quality_id | mixed_sensor | description                      |
+|----|-------|---------------------|--------|------------|------------|-----------|------------|--------------|----------------------------------|
+| 1  | 1     | 2025-01-01 00:00:00 | 1420.5 | 5.2        | 0.004      | 1         | 1          | FALSE        | Daily discharge at Lagarto       |
+| 2  | 1     | 2025-01-02 00:00:00 | 1387.3 | 4.8        | 0.003      | 1         | 1          | FALSE        |                                  |
+| 3  | 2     | 2025-01-01 12:00:00 |   3.45 | 0.05       | 0.015      | 2         | 2          | FALSE        | Instantaneous water level (raw)  |
+| 4  | 3     | 2015-07-01 00:00:00 |  220.0 |            |            |           | 3          | derived      | Reconstructed sediment conc.     |
+
+➡️ **Links**:  
+- `ts_id` → time series definition (`time_series`)  
+- `sensor_id` → measuring device (optional)  
+- `quality_id` → quality flag (`quality` table)  
+- `mixed_sensor` → TRUE/derived if data come from multiple sources  
+
+
+### Tables `rating_date`, `rating_gms`, `rating_hq`
+
+These tables define and store **rating curves** (stage–discharge relationships) associated with a given time series.  
+A `rating_date` record describes one curve definition, which may be expressed as equations or as point data (`rating_gms`, `rating_hq`).
+
+---
+
+#### Table `rating_date`
+Defines the **metadata of a rating curve** linked to a `time_series`.
+
+| id | ts_id | time_start | method       | author     | equation | a   | b   | c   | description                  |
+|----|-------|------------|--------------|------------|----------|-----|-----|-----|------------------------------|
+| 1  | 1     | 2020-01-01 | Manning-Str. | J. Perez   | YES      | 12  | 1.7 |     | Equation-based rating curve  |
+| 2  | 1     | 2022-01-01 | Empirical    | N. Fuertes | NO       |     |     |     | Updated with discrete points |
+
+---
+
+#### Table `rating_gms`
+Stores **(h, k)** support points for *GMS-type* rating curves.
+
+| id | rating_date_id | h    | k   |
+|----|----------------|------|-----|
+| 1  | 1              | 0.5  | 1.2 |
+| 2  | 1              | 1.0  | 2.5 |
+
+---
+
+#### Table `rating_hq`
+Stores **(h, q)** support points for *stage–discharge* curves.
+
+| id | rating_date_id | h   | q    |
+|----|----------------|-----|-----|
+| 1  | 2              | 1.0 | 250 |
+| 2  | 2              | 2.0 | 720 |
+
+---
+
+➡️ **Usage**:  
+- `rating_date` → defines the curve and method (equation or empirical).  
+- `rating_gms` / `rating_hq` → store support points when the curve is defined empirically.  
+
+
+
+
 
 
 ## Configuration tables
