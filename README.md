@@ -110,18 +110,29 @@ Defines the different types of "things", **stations or platforms**, each identif
 
 #### Example records
 
-| id | type  | code | name           | description                              |
-|----|----------|------|----------------|------------------------------------------|
-| 1  | station  | H    | Hydrological   | Station measuring discharge and water level |
-| 2  | station  | M    | Meteorological | Station measuring rainfall, wind, etc.      |
-| 3  | platform | V    | Vessel         | Mobile platform (e.g., ADCP vessel)         |
-| 4  | platform | D    | Drone          | Aerial platform for measurements            |
-
+| id | type     | code | name           | description                                  |
+|----|----------|------|----------------|----------------------------------------------|
+| 1  | station  | H    | Hydrological   | Station measuring discharge and water level  |
+| 2  | station  | HV   | Hydrological   | Virtual station measuring discharge and water level |
+| 3  | station  | M    | Meteorological | Station measuring rainfall, wind, etc.       |
+| 4  | platform | V    | Vessel         | Mobile platform (e.g., ADCP vessel)          |
+| 5  | platform | D    | Drone          | Aerial platform for measurements             |
 
 ### Table `things` 
+### Table `thing`
 
-Station name = infrastructure avec les capteurs et les équipements
-A station can be mobile --> see location
+Stores the list of **stations and platforms** (the actual "things") with their identifiers, attributes, and metadata.  
+Each `thing` is linked to a `thing_type`.
+
+#### Example records
+
+| id | uuid                                 | code   | name                | thing_type_id | basin_large | basin       | river   | lake | country | is_mobile | date_start | date_end | description                  |
+|----|--------------------------------------|--------|---------------------|---------------|-------------|-------------|---------|------|---------|-----------|------------|----------|------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440000 | ST001  | Lagarto Station     | 1             | Amazon      | Ucayali     | Ucayali |      | Peru    | FALSE     | 2009-01-01 |          | Main hydrological station    |
+| 2  | 550e8400-e29b-41d4-a716-446655440001 | ST002  | Atalaya Met Station | 3             | Amazon      | Ucayali     | Tambo   |      | Peru    | FALSE     | 2012-06-15 |          | Meteorological observations  |
+| 3  | 550e8400-e29b-41d4-a716-446655440002 | PL001  | ADCP Boat           | 4             | Amazon      | Ucayali     | Ucayali |      | Peru    | TRUE      | 2018-11-05 |          | Mobile ADCP measurement unit |
+| 4  | 550e8400-e29b-41d4-a716-446655440003 | DR001  | Survey Drone        | 5             | Amazon      | Marañón     | Marañón |      | Peru    | TRUE      | 2020-03-10 |          | Drone for aerial surveys     |
+
 
 
 ### Table `feature_of_interest`
