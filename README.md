@@ -181,6 +181,72 @@ When the user creates a station, he must choose and configure the attached time 
 
 ---
 
+
+
+## Database Views
+
+The `WiSSkHy` database uses incremental IDs as primary keys instead of composite keys in order to optimize SQL joins and group operations.  
+To provide more comprehensive and user-friendly access to the data, WiSSkHy defines a set of **SQL views**.
+
+These views:  
+- Expose meaningful relationships between tables without requiring complex joins.  
+- Combine metadata (e.g. station, platform, parameter) with observation values.  
+- Facilitate queries for analysis, reporting, and data exchange.  
+- Are especially convenient for **R-Shiny applications**, since the app can directly query a ready-to-use view instead of building and maintaining complex joins in the server code.  
+- Some views are equipped with **INSTEAD OF triggers**, so they behave like editable tables (`INSERT` / `UPDATE` / `DELETE`).  
+
+
+### View `vw_station`
+
+Provides a **station-centric view** combining `thing` and its most recent `location`.
+
+| Id_Station | Station_Name | Lon    | Lat    | Elevation | Country | Basin_Large | Basin    | Basin_Small | Administrator |
+|------------|--------------|--------|--------|-----------|---------|-------------|----------|-------------|---------------|
+| LAGARTO    | Lagarto      | -73.45 | -10.77 | 150       | Peru    | Amazon      | Ucayali  | Tamaya      | SENAMHI       |
+| IQUITOS    | Iquitos      | -73.25 |  -3.75 | 104       | Peru    | Amazon      | Amazonas | Nanay       | ANA           |
+
+
+### View `v_sed_sampling`
+
+Provides a **unified view of sediment samples**, combining metadata from `sampling`, `sampling_event`, `sample_sed`, and associated `data`.
+
+
+| sampling_type       | station  | ts_name_code | origin | sensor       | date_time           | methode | protocol | no_vertical | no_point | no_replicate | lon    | lat    | depth | total_depth | sample_comment     | params_json                       |
+|---------------------|----------|--------------|--------|--------------|---------------------|---------|----------|-------------|----------|--------------|--------|--------|-------|-------------|-------------------|-----------------------------------|
+| sediment.grab       | LAGARTO  | RAW          | SM     | StaffGauge   | 2025-06-10 10:30:00 | ISO-748 | Grab     | 1           | 1        | 1            | -73.45 | -10.77 | 2.5   | 5           | High flow sampling | {"Q":1420.5,"H":3.45,"Ctot":220} |
+| sediment.integrated | IQUITOS  | RAW          | DS     | ADCP Ucayali | 2025-06-11 11:00:00 | ISO-4363| Vertical | 1           | 1        | 1            | -73.25 |  -3.75 | 3.0   | 6           | Integrated sample  | {"Q":980.2,"H":2.87,"Ctot":180}  |
+
+
+
+### View `vw_data_full`
+
+Provides a **complete view of observations (`data`)** enriched with metadata from related tables:  
+- Time series (`time_series`, `ts_parameter`, `ts_name`, `ts_resolution`)  
+- Station/platform (`thing`, `location`)  
+- Quality flags (`quality`)  
+- Sensor and origin (`sensor`, `data_origin`)  
+
+This view makes it easier to query validated data with all metadata in one place.
+
+
+| id  | uuid                                 | date_time           | value  | quality | ts_code        | parameter | unit | resolution | station  | lat    | lon    | sensor       | origin | description                        |
+|-----|--------------------------------------|---------------------|--------|---------|----------------|-----------|------|------------|----------|--------|--------|--------------|--------|------------------------------------|
+| 1   | 550e8400-e29b-41d4-a716-446655440600 | 2025-01-01 00:00:00 | 1420.5 | ok      | LAGARTO|Q|D  | Discharge | m³/s | Daily      | LAGARTO  | -10.77 | -73.45 | Pressure #1  | PS     | Daily discharge at Lagarto         |
+| 2   | 550e8400-e29b-41d4-a716-446655440601 | 2025-01-02 00:00:00 | 1387.3 | ok      | LAGARTO|Q|D  | Discharge | m³/s | Daily      | LAGARTO  | -10.77 | -73.45 | Pressure #1  | PS     | Daily discharge at Lagarto         |
+| 3   | 550e8400-e29b-41d4-a716-446655440602 | 2025-01-01 12:00:00 |   3.45 | DBT     | LAGARTO|H|I  | Water lvl | m    | Instant.   | LAGARTO  | -10.77 | -73.45 | Radar #1     | PS     | Instantaneous water level (raw)    |
+| 4   | 550e8400-e29b-41d4-a716-446655440603 | 2015-07-01 00:00:00 | 220.0  | P       | IQUITOS|Ctot|M | Sed. conc | mg/L | Monthly    | IQUITOS  |  -3.75 | -73.25 | Derived      | R      | Reconstructed sediment conc. value |
+
+➡️ **Usage**:  
+Instead of joining 6–7 tables manually, users can query directly:  
+```sql
+SELECT date_time, value, parameter, unit, station, quality
+FROM vw_data_full
+WHERE station = 'LAGARTO' AND parameter = 'Discharge'
+  AND date_time BETWEEN '2025-01-01' AND '2025-01-31';
+
+
+
+
 ## Configuration tables
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
@@ -638,71 +704,7 @@ If enabled, links **observations (`data`) with sampling events**, ensuring consi
 
 ---
 
-### Database Views
-
-The `WiSSkHy` database uses incremental IDs as primary keys instead of composite keys in order to optimize SQL joins and group operations. To provide more comprehensive and user-friendly access to the data, `WiSSkHy` relies on **SQL views**. 
-
-These views:  
-- Expose meaningful relationships between tables without requiring complex joins from the user.  
-- Combine metadata (e.g. station, platform, parameter) with observation values.  
-- Facilitate queries for analysis, reporting, and data exchange.  
-- Are especially convenient for **R-Shiny applications**, since the app can directly query a ready-to-use view instead of building and maintaining complex SQL joins in the server code.  
-
-
-## Database Views
-
-In addition to tables, WiSSkHy defines **SQL views** to simplify queries and standardize interactions (e.g., for R/Shiny apps).  
-Some views are equipped with **INSTEAD OF triggers** so they behave like editable tables (INSERT/UPDATE/DELETE).
-
----
-
-### View `v_sed_sampling`
-
-Aggregates information from multiple tables (`sampling`, `sampling_event`, `sample_sed`, `data`, etc.) to provide a **unified view of sediment samples**.
-
-#### Main fields
-- `sampling_type` → type of sampling (from `sampling_type`)  
-- `station` → station code (resolved from `thing`)  
-- `ts_name_code` → time series name (raw, corrected, etc.)  
-- `origin` → data origin (from `data_origin`)  
-- `sensor` → sensor name  
-- `date_time` → timestamp of the reference `data` row  
-- `methode`, `protocol` → sampling metadata  
-- `no_vertical`, `no_point`, `no_replicate` → sampling identifiers  
-- `lon`, `lat`, `depth`, `total_depth`, `sample_comment` → sample details  
-- `params_json` → JSON with associated parameter values at the same timestamp  
-
-#### Example query
-```sql
-SELECT * FROM v_sed_sampling WHERE station = 'LAGARTO' LIMIT 5;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
