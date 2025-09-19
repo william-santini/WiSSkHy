@@ -243,7 +243,7 @@ SELECT date_time, value, parameter, unit, station, quality
 FROM vw_data_full
 WHERE station = 'LAGARTO' AND parameter = 'Discharge'
   AND date_time BETWEEN '2025-01-01' AND '2025-01-31';
-
+```
 
 
 
