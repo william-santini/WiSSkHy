@@ -104,6 +104,20 @@ When the user creates a station, he must choose and configure the attached time 
 
 ## Main tables
 
+### Table `thing_type`
+
+Defines the different types of "things", **stations or platforms**, each identified by a unique short code.
+
+#### Example records
+
+| id | type  | code | name           | description                              |
+|----|----------|------|----------------|------------------------------------------|
+| 1  | station  | H    | Hydrological   | Station measuring discharge and water level |
+| 2  | station  | M    | Meteorological | Station measuring rainfall, wind, etc.      |
+| 3  | platform | V    | Vessel         | Mobile platform (e.g., ADCP vessel)         |
+| 4  | platform | D    | Drone          | Aerial platform for measurements            |
+
+
 ### Table `things` 
 
 Station name = infrastructure avec les capteurs et les équipements
