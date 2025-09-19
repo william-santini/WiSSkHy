@@ -226,23 +226,34 @@ Each FoI is uniquely identified by a `uuid` and `code`, and classified by a `foi
 | 4  | 550e8400-e29b-41d4-a716-446655440053 | GW001  | Well-23           | 4           |            | `{"type":"Point","coordinates":[-72.3,-10.7]}`      | 2018-05-01 |          | Groundwater observation well        |
 
 
-### Table `ts_parameter`
+### Table `ts_parameter` (ObservedProperty)
 
-Reference table that defines the **parameters** of time series (e.g., water level, discharge, sediment concentration).  
-Each parameter has a unique `uuid`, `code`, and is associated with a measurement unit.
+Reference table that defines the **parameters** of time series (e.g., discharge, water level, sediment concentration).  
+Each parameter has a unique `uuid`, `code`, and is associated with a measurement unit.  
+Users can also define additional custom parameters if needed.
 
 #### Example records
 
-| id | uuid                                 | code  | name                  | unit      | description                          |
-|----|--------------------------------------|-------|-----------------------|-----------|--------------------------------------|
-| 1  | 550e8400-e29b-41d4-a716-446655440060 | Q     | Discharge             | m³/s      | River discharge                      |
-| 2  | 550e8400-e29b-41d4-a716-446655440061 | H     | Water level           | m         | Water stage / river height           |
-| 3  | 550e8400-e29b-41d4-a716-446655440062 | T     | Water temperature     | °C        | In-situ temperature                  |
-| 4  | 550e8400-e29b-41d4-a716-446655440063 | Ctot  | Sediment concentration| mg/L      | Total suspended sediment concentration |
-| 5  | 550e8400-e29b-41d4-a716-446655440064 | Cs    | Sand concentration    | mg/L      | Fraction of suspended sand           |
+| id | uuid                                 | code  | name                        | unit  | description                               |
+|----|--------------------------------------|-------|-----------------------------|-------|-------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440060 | Q     | Discharge                   | m³/s  | River discharge                           |
+| 2  | 550e8400-e29b-41d4-a716-446655440061 | H     | Water level                 | m     | Water stage / river height                |
+| 3  | 550e8400-e29b-41d4-a716-446655440062 | T     | Water temperature           | °C    | In-situ water temperature                 |
+| 4  | 550e8400-e29b-41d4-a716-446655440063 | Ctot  | Total sediment concentration| mg/L  | Total suspended sediment concentration    |
+| 5  | 550e8400-e29b-41d4-a716-446655440064 | Cs    | Sand concentration          | mg/L  | Fraction of suspended sand in suspension  |
+
+---
+
+Default codes in WiSSkHy include for example:  
+- **Q** = Water discharge  
+- **H** = Water level  
+- **Ctot** = Total Suspended Sediment Concentration  
+- **Cs** = Sand concentration  
+
+Users may extend this list by adding new parameters as required.
 
 
-### Table `ts_name`
+### Table `ts_code`
 
 Reference table that defines **names for time series** (e.g., raw data, corrected data, simulated data).  
 A combination of `code` and `category` must be unique, allowing reuse of codes across different categories.
@@ -259,17 +270,21 @@ A combination of `code` and `category` must be unique, allowing reuse of codes a
 
 ### Table `ts_resolution`
 
-Reference table that defines the **time resolutions** of time series (e.g., instantaneous, daily, monthly).  
+Defines the **default time resolutions** used for time series.  
 Each resolution has a unique `code`.
 
 #### Example records
 
-| id | uuid                                 | code | label          | description                                 |
-|----|--------------------------------------|------|----------------|---------------------------------------------|
-| 1  | 550e8400-e29b-41d4-a716-446655440080 | I    | Instantaneous  | Original records at measurement frequency   |
-| 2  | 550e8400-e29b-41d4-a716-446655440081 | D    | Daily          | Aggregated daily averages or sums           |
-| 3  | 550e8400-e29b-41d4-a716-446655440082 | M    | Monthly        | Aggregated monthly averages or sums         |
-| 4  | 550e8400-e29b-41d4-a716-446655440083 | Y    | Yearly         | Aggregated annual averages or sums          |
+| id | uuid                                 | code | label          | description                                                                 |
+|----|--------------------------------------|------|----------------|-----------------------------------------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440080 | I    | Instantaneous  | Raw values without temporal aggregation (as recorded, possibly irregular).  |
+| 2  | 550e8400-e29b-41d4-a716-446655440081 | ss   | Second         | Values recorded or aggregated at a one-second resolution.                   |
+| 3  | 550e8400-e29b-41d4-a716-446655440082 | mm   | Minute         | Values recorded or aggregated at a one-minute resolution.                   |
+| 4  | 550e8400-e29b-41d4-a716-446655440083 | hh   | Hour           | Values recorded or aggregated at an hourly resolution.                      |
+| 5  | 550e8400-e29b-41d4-a716-446655440084 | D    | Daily          | Aggregated over 24 hours (mean, max, min, or sum depending on the variable).|
+| 6  | 550e8400-e29b-41d4-a716-446655440085 | M    | Monthly        | Aggregated over a calendar month.                                           |
+| 7  | 550e8400-e29b-41d4-a716-446655440086 | Y    | Yearly         | Aggregated over a calendar or hydrological year.                            |
+
 
 
 
@@ -285,7 +300,7 @@ Each time series is uniquely identified by a `uuid` and `code`, and is linked to
 
 #### Example records
 
-| id | uuid                                 | code       | thing_id | foi_id | parameter_id | resolution_id | ts_name_id | description                        | valid_from | valid_to |
+| id | uuid                                 | code       | thing_id | foi_id | parameter_id | resolution_id | ts_code_id | description                        | valid_from | valid_to |
 |----|--------------------------------------|------------|----------|--------|--------------|---------------|------------|------------------------------------|------------|----------|
 | 1  | 550e8400-e29b-41d4-a716-446655440090 | Q_D_CORR   | 1        | 1      | 1            | 2             | 2          | Corrected daily discharge at Lagarto | 2009-01-01 |          |
 | 2  | 550e8400-e29b-41d4-a716-446655440091 | H_I_RAW    | 1        | 1      | 2            | 1             | 1          | Instantaneous water level (raw)     | 2009-01-01 |          |
@@ -359,6 +374,20 @@ Stores **(h, q)** support points for *stage–discharge* curves.
 - `rating_gms` / `rating_hq` → store support points when the curve is defined empirically.  
 
 
+### Table `no_agg_dates`
+
+Defines **periods where aggregation must not be applied** to a given time series (e.g., gaps, anomalies, or special measurement campaigns).  
+Linked to a `time_series` via `ts_id`.
+
+#### Example records
+
+| id | ts_id | start_date  | end_date    | description                 |
+|----|-------|-------------|-------------|-----------------------------|
+| 1  | 1     | 2015-01-01  | 2015-03-31  | Do not aggregate during flood season |
+| 2  | 2     | 2018-11-05  | 2018-11-20  | Mobile ADCP campaign        |
+| 3  | 1     | 2020-06-10  |             | Ongoing anomaly (sensor drift) |
+
+➡️ **Usage**: these ranges are excluded from automatic daily/monthly/yearly aggregation.
 
 
 
@@ -367,32 +396,7 @@ Stores **(h, q)** support points for *stage–discharge* curves.
 
 It is possible to easily configure the database using the **configuration tables**. These tables are modifiable if needed and ensure the **homogeneity** of the database.
 
-### Table `ts_parameter` (ObservedProperty)
 
-Default **parameters** in the WiSSkHy db:
-  - Q = Water discharge  
-  - Cst = Total Suspended Sediment Concentration  
-  - ...
-
-<img width="1588" height="593" alt="image" src="https://github.com/user-attachments/assets/01a364ff-0140-49f0-ba66-e368a6aef73f" />
-
-### Table `ts_resolution`
-
-Default **time series resolutions**:
-
-| Code   | Label              | Definition                                                                 |
-|--------|--------------------|----------------------------------------------------------------------------|
-| **I**  | **Instantaneous**  | Raw value without any temporal aggregation (irregular intervals, as recorded). |
-| **ss** | **Second**         | Values recorded or aggregated at a second resolution.                      |
-| **mm** | **Minute**         | Values recorded or aggregated at a minute resolution.                      |
-| **hh** | **Hour**           | Values recorded or aggregated at an hourly resolution.                     |
-| **D**  | **Day**            | Values aggregated over 24 hours (e.g., daily mean, max, min, or sum depending on the variable). |
-| **M**  | **Month**          | Values aggregated over a calendar month.                                   |
-| **Y**  | **Year**           | Values aggregated over a calendar or hydrological year.                    |
-
-Users can define additional custom resolutions if needed (e.g., **mm30** for values aggregated every 30 minutes).
-
-### Table `ts_name`
 
 
 ### Table `sensor`
@@ -420,17 +424,38 @@ Default `origin` codes in the WiSSkHy database:
 
 Users can define additional custom `origin` if needed
 
+
+
 ### Table `quality`
 
-The table `quality` can be customized according to the quality criteria defined by each institute.  
-It allows users to specify standardized codes and their corresponding labels, which can then be used consistently across datasets.
+Reference table that defines the **quality flags** used for observations in `data`.  
+It can be customized by each institute to specify standardized codes and labels that are applied consistently across datasets.  
+Each record has a short `code`, a `label`, and an optional description.
 
-| Code | Label        | Description (optional)                           |
-|------|-------------|--------------------------------------------------|
-| ok   | OK          | Data is validated and considered reliable        |
-| DBT  | Doubtful    | Data may be erroneous or uncertain               |
-| P    | Partial     | Data series is incomplete or partially valid     |
-| CUM  | Cumulative  | Data represents cumulative values (e.g. totals)  |
+#### Example records
+
+| id | uuid                                 | code | label       | description                                   |
+|----|--------------------------------------|------|-------------|-----------------------------------------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440200 | ok   | OK          | Valid / reliable observation                  |
+| 2  | 550e8400-e29b-41d4-a716-446655440201 | DBT  | Doubtful    | Suspect or uncertain value                    |
+| 3  | 550e8400-e29b-41d4-a716-446655440202 | P    | Partial     | Incomplete measurement or partially valid     |
+| 4  | 550e8400-e29b-41d4-a716-446655440203 | CUM  | Cumulative  | Value represents an accumulation over a period |
+
+➡️ **Usage**:  
+- Linked in the `data.quality_id` field.  
+- Ensures consistent handling of data validation and uncertainty.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### SQL Views
