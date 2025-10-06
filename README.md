@@ -657,11 +657,11 @@ Each sample has a unique `sample_uuid` and may include replicate, vertical, or p
 
 ### Table `sample_sed`
 
-Details of **sediment grab samples**.
+Details of **sediment samples**.
 
 | id | sample_uuid | sampling_event_id | distance_lb | total_depth | depth | lon     | lat     | comment          |
 |----|-------------|-------------------|-------------|-------------|-------|---------|---------|------------------|
-| 1  | samp-001    | 1                 | 25          | 5           | 2.5   | -73.76  | -10.73  | Mid-channel grab |
+| 1  | samp-001    | 1                 | 250         | 15          | 7.5   | -73.76  | -10.73  | Mid-channel      |
 
 ---
 
