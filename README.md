@@ -106,7 +106,34 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 #### Local database
 #### Remote Server
 
-### Clean and Export
+### Clean & Export
+
+The **Clean & Export** module provides tools to prepare and export validated time series from the WiSSkHy database.  
+It allows users to filter, clean, and format hydrological and sediment data prior to analysis or sharing.
+
+#### Main features
+- Import and preview of time series from the SQLite database.  
+- Selection and filtering by station, parameter, and time period.  
+- Detection and removal of missing values, duplicates, and **replicates** (multiple measurements for the same date).  
+- Identification and treatment of **zero, negative, or unrealistic values** according to parameter-specific rules.  
+- Detection of **repeated patterns, shifts, and anomalies** using time-series motif analysis.  
+- Application of quality flags, correction rules, and statistical summaries.  
+- Export of cleaned datasets in `.xlsx` or `.csv` formats, with complete metadata and traceability.  
+
+#### Main R packages
+- Data manipulation: `dplyr`, `tidyr`, `data.table`, `lubridate`  
+- Visualization: `ggplot2`, `plotly`  
+- Pattern detection: `TSMP`, `MatrixProfile`  
+- File export: `openxlsx`, `readr`  
+
+
+
+
+
+
+
+
+
 
 ### Gap filling & Consistency
 
@@ -130,7 +157,7 @@ It also supports **analyst-in-the-loop** workflows for interactive review and co
 - Simplified flow routing (Muskingum, Muskingum–Cunge, Kinematic Wave)
 - Optional floodplain attenuation and reach parameters
 
-### Machine Learning
+### Machine Learning / AI
 - Classical ML via `tidymodels`, `stacks` (GLM, RF, GBM, XGBoost)
 - Deep learning (`keras`, `torch`): LSTM / GRU for temporal sequences
 
@@ -168,7 +195,7 @@ install.packages(c(
   "MASS", "broom", "forecast", "tidymodels", "stacks",
   "doParallel", "plotly"
 ))
-
+```
 ### Wrangling
 
 ### Summary & Visualization
