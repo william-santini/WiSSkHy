@@ -10,6 +10,7 @@ It provides a complete workflow to support hydrological services and researchers
 - Data import & storage in a local SQLite database
 - Database management (visualize, add, or delete tables and fields)
 - Data cleaning
+- Gap filling and consistency analysis
 - Data wrangling
 - Data visualization & exploration (interactive plots and tables)
 - Advanced data processing and analysis with a suite of tools designed for both **operational use and research**, including:
