@@ -196,6 +196,13 @@ install.packages(c(
   "doParallel", "plotly"
 ))
 ```
+
+
+
+<img width="1536" height="791" alt="newplot" src="https://github.com/user-attachments/assets/0512d134-cc83-4add-a667-6001b9dc240e" />
+
+
+
 ### Wrangling
 
 ### Summary & Visualization
