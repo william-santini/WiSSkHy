@@ -127,6 +127,9 @@ It allows users to filter, clean, and format hydrological and sediment data prio
 - Pattern detection: `TSMP`, `MatrixProfile`  
 - File export: `openxlsx`, `readr`  
 
+<img width="1895" height="1018" alt="image" src="https://github.com/user-attachments/assets/9ea4cbe7-ec79-49b4-a553-7fc555345363" />
+
+
 
 
 
