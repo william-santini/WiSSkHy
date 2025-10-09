@@ -108,7 +108,66 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Clean and Export
 
-### Gap filling
+### Gap filling & Consistency
+
+_(WiSSkHy-CoFi: Consistency & Filling — part of the WiSSkHy hydrological toolbox)_
+
+Tools for **time-series consistency analysis** and **gap filling** in hydrological and sediment datasets.  
+The module builds, tests, and validates estimators (statistical, mechanistic, or machine learning) before any automated filling.  
+It also supports **analyst-in-the-loop** workflows for interactive review and correction.
+
+---
+
+## Methods
+
+### Statistical
+- Simple, multivariate, and multiple regressions (`MASS::rlm`)
+- Statistical propagation between stations (correlation-based)
+- Seasonal climatologies (daily/monthly averages)
+- ARIMA / SARIMA models for short- and seasonal predictions (`forecast`)
+
+### Hydraulic / Hydrological
+- Simplified flow routing (Muskingum, Muskingum–Cunge, Kinematic Wave)
+- Optional floodplain attenuation and reach parameters
+
+### Machine Learning
+- Classical ML via `tidymodels`, `stacks` (GLM, RF, GBM, XGBoost)
+- Deep learning (`keras`, `torch`): LSTM / GRU for temporal sequences
+
+### Analyst-in-the-Loop
+- Semi-automatic estimator calibration and correction
+- Forecasting inspired by **Prophet** (Taylor & Letham, 2018)
+- Human-supervised validation before applying gap filling
+
+---
+
+### Workflow
+
+1. **Clean & align** receiver and donor time series  
+2. **Build** a unified data frame (`df_init`, daily or sub-daily with matchups)  
+3. **Select** training periods and apply soft masks (`usefit_*`)  
+4. **Train** estimators → compute diagnostics → store residuals  
+5. *(Later)* Apply estimators for controlled gap filling and consistency analysis  
+
+---
+
+### Core R Dependencies
+
+| Category | Packages |
+|-----------|-----------|
+| Data handling | `dplyr`, `tidyr`, `lubridate`, `readxl`, `data.table` |
+| Modeling | `MASS`, `broom`, `forecast`, `tidymodels`, `stacks` |
+| ML / Deep learning | `keras`, `torch` (optional) |
+| Visualization | `plotly` |
+| Parallel | `doParallel` |
+
+Install core dependencies:
+```r
+install.packages(c(
+  "dplyr", "tidyr", "lubridate", "readxl", "data.table",
+  "MASS", "broom", "forecast", "tidymodels", "stacks",
+  "doParallel", "plotly"
+))
 
 ### Wrangling
 
