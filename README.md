@@ -6,7 +6,7 @@ Distill your data. Hydrate your science...
 **`WiSSkHy` is a local and flexible framework** built with R-Shiny and SQLite for hydrological data management based on an SQLite database and fully open-source tools. Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
 
 
-
+<img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
 
 <img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
 
@@ -130,7 +130,7 @@ This sequential workflow guarantees high-quality, standardized, and shareable da
 The **Clean & Export** module provides tools to prepare and export validated time series from the WiSSkHy database.  
 It allows users to filter, clean, and format hydrological and sediment data prior to analysis or sharing.
 
-<img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
+
 
 #### Main features
 - Import and preview of time series from the SQLite database.  
