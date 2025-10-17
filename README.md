@@ -29,6 +29,10 @@ Beyond these core features, users can:
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
 - Use the apps to automatically generate SQL queries that can be reused in custom code/script.
 
+<img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
+
+
+
 > [!NOTE]  
 > `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
 > users can contribute, share, and reuse tools or scripts within the community.  
@@ -215,6 +219,20 @@ This module provides advanced hydrological, sedimentary, and geochemical analysi
 8. Report        → Generate automatic reports (Concentration Analysis, Field Report, etc.)
 
 This toolbox enables expert-level interpretation, modeling, and cross-domain integration of hydrological, sedimentary, and geochemical datasets within WiSSkHy.
+
+
+### ADCP Advanced
+
+
+<img width="1902" height="863" alt="image" src="https://github.com/user-attachments/assets/c4f74981-c7a5-4418-ba57-002c646e8bf8" />
+
+
+
+
+
+
+
+
 
 ## Query generator Tab
 
