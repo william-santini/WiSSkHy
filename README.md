@@ -81,7 +81,7 @@ To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so
 You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
 If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
 
-## Database
+## Pipeline database
 
 ### Start by creating or loading a `WiSSkHy-db`
 
@@ -97,15 +97,20 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 
 ### Edit field
 
-## Data
 
-### Import
-#### Time Series
-#### ADCP gauging
-#### PSD
-#### LISST-SL2
-#### Local database
-#### Remote Server
+## Pipeline data
+This module manages the full data workflow, from raw import to formatted exports. It ensures traceability, quality control, and reproducibility of hydrological time series.
+
+### Pipeline overview:
+1. Import             → Load raw datasets from local files, sensors, or databases
+2. Clean & Export     → Detect, flag, and correct anomalies (missing values, duplicates, outliers)
+3. Wrangle            → Reshape, merge, and harmonize datasets (units, parameters, metadata)
+4. Fill & Validate    → Fill data gaps using statistical, mechanistic, or ML estimators; perform inter-station consistency checks
+5. Analyze            → Generate exploratory statistics, diagnostics, and performance indicators
+6. Summarize & Report → Produce automatic reports (RMarkdown / HTML / PDF) with interpretation
+7. Format & Export    → Export datasets in standardized formats (ANA, OTCA, WMO, WaterML2, etc.)
+
+This sequential workflow guarantees high-quality, standardized, and shareable data products.
 
 ### Clean & Export
 
@@ -192,14 +197,7 @@ It also supports **analyst-in-the-loop** workflows for interactive review and co
 | Visualization | `plotly` |
 | Parallel | `doParallel` |
 
-Install core dependencies:
-```r
-install.packages(c(
-  "dplyr", "tidyr", "lubridate", "readxl", "data.table",
-  "MASS", "broom", "forecast", "tidymodels", "stacks",
-  "doParallel", "plotly"
-))
-```
+
 
 
 
@@ -211,37 +209,23 @@ install.packages(c(
 
 ### Summary & Visualization
 
-## Tools
+## Pipeline tools
 
-### ADCP
 
-### Rating tools
+### Pipeline overview:
 
-### Discharge & Flux
+This module provides advanced hydrological, sedimentary, and geochemical analysis tools. It complements the Data pipeline by offering computation, modeling, visualization, and reporting utilities for calibrated, derived, or cross-referenced datasets.
 
-### Sediment
+1. Calibrate     → Define and fit rating curves; establish stage–discharge relationships
+2. Compute       → Derive discharges, sediment fluxes, and flow-normalized indicators
+3. Model         → Apply hydraulic, hydrological, or statistical models
+4. Remote Sense  → Process and visualize altimetry and water colour (optical) observations
+5. Geochemistry  → Perform statistical analyses, compute ionic ratios, and generate diagrams (Piper, Stiff, Schoeller, Gibbs); compare with standards or thresholds
+6. ADCP Advanced → Use HydSed-ADCP tools for velocity profiling, shear velocity (u*), concentration fitting, and moving-bed analyses
+7. Compare       → Cross-check datasets across sources, stations, or observation types
+8. Report        → Generate automatic reports (Concentration Analysis, Field Report, etc.)
 
-#### PSD
-
-#### LISST
-
-#### Turbidity
-
-#### Vertival profiles
-
-#### Modelling
-
-### Remote-sensing
-
-#### Altimetry
-
-#### Water color
-
-#### TRIOS field measurements
-
-### Geochemistry
-
-## Automatic reports Tab
+This toolbox enables expert-level interpretation, modeling, and cross-domain integration of hydrological, sedimentary, and geochemical datasets within WiSSkHy.
 
 ## Query generator Tab
 
