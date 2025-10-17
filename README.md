@@ -135,18 +135,9 @@ It allows users to filter, clean, and format hydrological and sediment data prio
 <img width="1895" height="1018" alt="image" src="https://github.com/user-attachments/assets/9ea4cbe7-ec79-49b4-a553-7fc555345363" />
 
 
+### Fill & Validate 
 
-
-
-
-
-
-
-
-
-### Gap filling & Consistency
-
-_(WiSSkHy-CoFi: Consistency & Filling — part of the WiSSkHy hydrological toolbox)_
+_(WiSSkHy-CoFi: Consistency & Filling — part of the WiSSkHy data toolbox)_
 
 Tools for **time-series consistency analysis** and **gap filling** in hydrological and sediment datasets.  
 The module builds, tests, and validates estimators (statistical, mechanistic, or machine learning) before any automated filling.  
@@ -205,12 +196,10 @@ It also supports **analyst-in-the-loop** workflows for interactive review and co
 
 
 
-### Wrangling
+### Wrangle
 
-### Summary & Visualization
 
 ## Pipeline tools
-
 
 ### Pipeline overview:
 
