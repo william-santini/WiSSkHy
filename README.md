@@ -111,8 +111,8 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ### Edit field
 
 
-## Pipeline data
-This module manages the full data workflow, from raw import to formatted exports. It ensures traceability, quality control, and reproducibility of hydrological time series.
+## Pipeline Time Series
+This module manages the full time series/data workflow, from raw import to formatted exports. It ensures traceability, quality control, and reproducibility of hydrological time series.
 
 ### Pipeline overview:
 1. Import             → Load raw datasets from local files, sensors, or databases
