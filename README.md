@@ -111,6 +111,10 @@ If you need to access the WiSSkHy SQLite database externally, you can install DB
 ### Edit field
 
 
+
+## Pipeline Discrete Measurements
+
+
 ## Pipeline Time Series
 This module manages the full time series/data workflow, from raw import to formatted exports. It ensures traceability, quality control, and reproducibility of hydrological time series.
 
@@ -130,8 +134,6 @@ This sequential workflow guarantees high-quality, standardized, and shareable da
 The **Clean & Export** module provides tools to prepare and export validated time series from the WiSSkHy database.  
 It allows users to filter, clean, and format hydrological and sediment data prior to analysis or sharing.
 
-
-
 #### Main features
 - Import and preview of time series from the SQLite database.  
 - Selection and filtering by station, parameter, and time period.  
@@ -145,9 +147,8 @@ It allows users to filter, clean, and format hydrological and sediment data prio
 - Data manipulation: `dplyr`, `tidyr`, `data.table`, `lubridate`  
 - Visualization: `ggplot2`, `plotly`  
 - Pattern detection: `TSMP`, `MatrixProfile`  
-- File export: `openxlsx`, `readr`  
-
-
+- File export: `openxlsx`, `readr`
+  
 ### Fill & Validate 
 
 _(WiSSkHy-CoFi: Consistency & Filling — part of the WiSSkHy data toolbox)_
@@ -201,18 +202,50 @@ It also supports **analyst-in-the-loop** workflows for interactive review and co
 | Visualization | `plotly` |
 | Parallel | `doParallel` |
 
-
-
-
-
 <img width="1536" height="791" alt="newplot" src="https://github.com/user-attachments/assets/0512d134-cc83-4add-a667-6001b9dc240e" />
-
-
 
 ### Wrangle
 
 
-## Pipeline tools
+
+### Summarize & Report
+
+
+### Format & Export
+
+
+## Pipeline Calibrate
+This module provides tools for building, fitting, and validating stage–discharge relationships (rating curves) and related calibration datasets. 
+It complements the Time Series and Compute modules by allowing users to derive, manage, and evaluate empirical or model-based calibration equations.
+
+This module ensures consistency and reproducibility of discharge calibration processes within the WiSSkHy environment.
+
+### Pipeline overview:
+- Rating Tools → Fit and visualize stage–discharge (Q–H) relationships using power laws, regressions, or robust estimators; manage input points and extrapolation.
+- Diagnostics → Assess calibration performance through residual plots, error metrics, temporal validity, and shift detection.
+- Uncertainty → Quantify uncertainty and confidence intervals of rating curves and computed discharges; compare against ADCP or reference measurements.
+
+## Pipeline Compute
+
+This module provides tools for computing water discharge, material fluxes (loads), and hydrological indicators from validated time series and calibration datasets.
+It complements the Time Series and Calibrate modules by enabling the quantitative derivation of hydrological, sedimentary, and water-quality metrics.
+
+### Pipeline overview:
+Water Discharges  → Compute discharge (Q) from stage (H) using rating curves or hydraulic relationships; manage extrapolation, shifts, and versioning.
+Fluxes            → Estimate material fluxes or loads (e.g., sediment, nutrients, carbon)
+    #                         from discharge and concentration data using multiple methods:
+    #                         direct integration, interpolation, regression, or flow-weighted means.
+    #  3. Mass Balances     → Derive water and sediment budgets over defined periods or basins;
+    #                         compute cumulative inflows/outflows and storage changes.
+    #  4. Flow Indicators   → Calculate hydrological indices such as specific discharge (Qs),
+    #                         runoff coefficient, baseflow index, flashiness, and seasonal metrics.
+    #  5. Balance Reports   → Summarize and visualize computed discharges, fluxes, and balances;
+    #                         generate automatic reports or export summary tables.
+    #
+    # This module transforms calibrated and validated observations into discharge, flux,
+    # and balance metrics suitable for scientific analysis, modeling, and reporting within WiSSkHy.
+
+## Pipeline Advanced Tools
 
 ### Pipeline overview:
 
