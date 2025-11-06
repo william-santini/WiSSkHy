@@ -9,11 +9,11 @@ Distill your data. Hydrate your science...
 
 See the live demo here: https://sno-hybam.shinyapps.io/WiSSkHy/
 
-
+<br>
 <img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
-
+<br>
 <img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
-
+<br>
 
 
 
