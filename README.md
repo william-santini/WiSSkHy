@@ -6,7 +6,11 @@ Distill your data. Hydrate your science...
 ## The WiSSkHy framework
 **`WiSSkHy` is a local, modular, and fully open-source** framework built with `R Shiny`, `Julia`, and `SQLite` (with migration planned to `PostgreSQL`) for hydrological data management and visualization.. Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
 <br>  
-See the live demo here: https://sno-hybam.shinyapps.io/WiSSkHy/
+> [!NOTE]   
+> This repository is the **public overview** of the WiSSkHy framework.  
+> The **source code and full application** are currently hosted in a **private development repository**  
+> until the first public release (expected 2026).  
+> A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
 <br>  
 <img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
 <br>  
@@ -36,15 +40,6 @@ Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
 - Use the apps to automatically generate SQL queries that can be reused in custom code/script.
-
-> [!NOTE]   
-> This repository is the **public overview** of the WiSSkHy framework.  
-> The **source code and full application** are currently hosted in a **private development repository**  
-> until the first public release (expected 2026).  
-> A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
-
-
-
 
 > [!NOTE]  
 > `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
