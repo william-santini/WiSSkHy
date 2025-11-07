@@ -20,8 +20,18 @@ Its database architecture is conceptually aligned with the [OGC SensorThings API
 <br>  
 <img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
 
-<br>   
-It provides a complete workflow to support hydrological services and researchers, including:
+<br>
+The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
+- Add new tools directly in R-Shiny, either within the existing apps or independently.
+- Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
+- Use the apps to automatically generate SQL queries that can be reused in custom code/script.
+
+> [!NOTE]  
+> `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
+> users can contribute, share, and reuse tools or scripts within the community.  
+> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
+
+`WiSSkHy-App` provides a complete workflow with pipelines to support hydrological services and researchers, including:
    
 - Data import & storage in a local SQLite database
 - Database management (visualize, add, or delete tables and fields)
@@ -39,18 +49,6 @@ It provides a complete workflow to support hydrological services and researchers
 - Data export to `.csv`, `.xlsx`, and other formats
 - Automated report generation in LaTeX, Word, and HTML (using R Markdown and Quarto)
 
-The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkHy` environment.  
-Beyond these core features, users can:
-- Add new tools directly in R-Shiny, either within the existing apps or independently.
-- Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
-- Use the apps to automatically generate SQL queries that can be reused in custom code/script.
-
-> [!NOTE]  
-> `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
-> users can contribute, share, and reuse tools or scripts within the community.  
-> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
-
-![Schéma](https://github.com/user-attachments/assets/03230a04-b6dd-41fa-8070-0fb65640880b)
 
 ## Collaborative use of the database `WiSSkHy-db`
 
