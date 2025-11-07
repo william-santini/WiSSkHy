@@ -3,7 +3,8 @@ Wiki Soft Suite for Hydrology
 Distill your data. Hydrate your science...
 ![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
 
-## The WiSSkHy framework
+## The WiSSkHy Framework
+
 **`WiSSkHy` is a modular, polyglot, collaborative, and open-source framework**  
 built with **`R Shiny`**, **`Julia`**, **`Python`**, and **`SQLite`**  
 (with a planned migration to **`PostgreSQL`**) for **hydrological data management and visualization**.  
@@ -17,6 +18,7 @@ and designed according to the [FAIR principles](https://www.go-fair.org/fair-pri
 (*Findable, Accessible, Interoperable, Reusable*),  
 with a strong emphasis on **interoperability** (OGC/ISO standards)  
 and **reproducibility** (open formats, transparent workflows).
+
 
 
 > [!NOTE]   
