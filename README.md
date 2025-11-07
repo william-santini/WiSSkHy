@@ -9,8 +9,6 @@ Distill your data. Hydrate your science...
 It is designed as a **self-contained and deployable** system, allowing both local and network-based use by hydrological services and research teams.  
 Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a strong emphasis on **interoperability** (OGC/ISO standards) and **reproducibility** (open formats, transparent workflows).
 
-
-
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
 > The **source code and full application** are currently hosted in a **private development repository**
@@ -20,7 +18,7 @@ Its database architecture is conceptually aligned with the [OGC SensorThings API
 <br>  
 <img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
 
-<br>
+<br><br>
 The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
