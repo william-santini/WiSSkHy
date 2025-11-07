@@ -28,8 +28,8 @@ The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkH
 
 > [!NOTE]  
 > `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
-> users can contribute, share, and reuse tools or scripts within the community.  
-> This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
+> - users can contribute, share, and reuse tools or scripts within the community.  
+> - This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
 
 `WiSSkHy-App` provides a complete workflow with pipelines to support hydrological services and researchers, including:
    
