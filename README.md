@@ -4,7 +4,20 @@ Distill your data. Hydrate your science...
 ![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
 
 ## The WiSSkHy framework
-**`WiSSkHy` is a local, modular, polyglot and fully open-source** framework built with **`R Shiny`**, **`Julia`**, `Python`, and **`SQLite`** (with migration planned to `PostgreSQL`) for hydrological data management and visualization.. Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html), and designed following the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a focus on interoperability (OGC/ISO standards) and reusability (open formats, reproducible workflows).
+**`WiSSkHy` is a modular, polyglot, collaborative, and open-source framework**  
+built with **`R Shiny`**, **`Julia`**, **`Python`**, and **`SQLite`**  
+(with a planned migration to **`PostgreSQL`**) for **hydrological data management and visualization**.  
+
+It is designed as a **self-contained and deployable system**,  
+allowing both **local and network-based use** by hydrological services and research teams.  
+
+Its database architecture is conceptually aligned with the  
+[OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html)  
+and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/)  
+(*Findable, Accessible, Interoperable, Reusable*),  
+with a strong emphasis on **interoperability** (OGC/ISO standards)  
+and **reproducibility** (open formats, transparent workflows).
+
 
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
