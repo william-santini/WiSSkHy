@@ -7,19 +7,14 @@ Distill your data. Hydrate your science...
 
 **`WiSSkHy`** is a **modular, polyglot, collaborative, and open-source** framework built with **`R Shiny`**, **`Julia`**, `Python`, and **`SQLite`** (with a planned migration to `PostgreSQL`) for **hydrological operational data management and Research**.  
 It is designed as a **self-contained and deployable** system, allowing both local and network-based use by hydrological services and research teams.  
-Its database architecture is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a strong emphasis on **interoperability** (OGC/ISO standards) and **reproducibility** (open formats, transparent workflows).
+Its **database architecture** is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a strong emphasis on **interoperability** (OGC/ISO standards) and **reproducibility** (open formats, transparent workflows).
 
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
 > The **source code and full application** are currently hosted in a **private development repository**
 > until the first public release (expected 2026, open source licence). A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
-<br>  
-<img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
-<br>  
-<img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
 
-<br><br>
-The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
+The **`WiSSkHy-App`** was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
 - Use the apps to automatically generate SQL queries that can be reused in custom code/script.
@@ -28,6 +23,13 @@ The `WiSSkHy-App` was created to provide access to the main tools of the `WiSSkH
 > `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
 > - users can contribute, share, and reuse tools or scripts within the community.  
 > - This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
+
+<br>  
+<img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
+<br>  
+<img width="1898" height="900" alt="image" src="https://github.com/user-attachments/assets/5010300b-2bd3-4398-b348-465cdcb25ba9" />
+
+<br><br>
 
 `WiSSkHy-App` provides a complete workflow with pipelines to support hydrological services and researchers, including:
    
