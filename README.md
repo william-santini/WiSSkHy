@@ -9,7 +9,7 @@ Distill your data. Hydrate your science...
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
 > The **source code and full application** are currently hosted in a **private development repository**
-> until the first public release (expected 2026, open source).  
+> until the first public release (expected 2026, open source licence).  
 > A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
 <br>  
 <img width="1870" height="979" alt="image" src="https://github.com/user-attachments/assets/71a519ba-cd3c-4bc6-a2b6-af1a4500ca9c" />
