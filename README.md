@@ -65,30 +65,6 @@ To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so
 > A **PostgreSQL** version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.  
 > This version will follow all the FAIR principles (Findable, Accessible, Interoperable, Reusable).
 
-
-## Project status
-
-`WiSSkHy` is actively under development. The current progress is estimated at **60% complete**.
-
-### Features already implemented
-- Core R-Shiny Apps for database management, visualization, and analysis
-- Data import/export and quality control tools
-- Automated report generation in LaTeX and HTML
-- Support for multiple parameter types and temporal resolutions
-- ADCP tools
-- Rating tools
-
-### Planned features
-- Full multi-user support with a PostgreSQL backend
-- Additional analysis modules and integration with external tools
-- Expanded collaborative features for sharing scripts and tools within the community
-
-> [!TIP]  
-> `WiSSkHy` continues to evolve as a collaborative tool for hydrological data management, aiming to leverage the power of R, Python, and other languages while ensuring reproducible and flexible workflows.
-
-
-
-
 # Getting started with the `WiSSkHy-App`
 
 ## Installation
@@ -922,6 +898,22 @@ Available on GitHub.
 ## License
 This project is licensed under the XXX License.
 
+## Project status
+
+`WiSSkHy` is actively under development. The current progress is estimated at **60% complete**.
+
+### Features already implemented
+- Core R-Shiny Apps for database management, visualization, and analysis
+- Data import/export and quality control tools
+- Automated report generation in LaTeX and HTML
+- Support for multiple parameter types and temporal resolutions
+- ADCP tools
+- Rating tools
+
+### Planned features
+- Full multi-user support with a PostgreSQL backend
+- Additional analysis modules and integration with external tools
+- Expanded collaborative features for sharing scripts and tools within the community
 
 
 
