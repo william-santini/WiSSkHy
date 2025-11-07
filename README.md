@@ -106,9 +106,9 @@ This module manages the full time series/data workflow, from raw import to forma
 
 This sequential workflow guarantees high-quality, standardized, and shareable data products.
 
-### Clean & Export
+### Clean
 
-The **Clean & Export** module provides tools to prepare and export validated time series from the WiSSkHy database.  
+The **Clean** module provides tools to prepare and export validated time series from the WiSSkHy database.  
 It allows users to filter, clean, and format hydrological and sediment data prior to analysis or sharing.
 
 #### Main features
@@ -169,15 +169,7 @@ It also supports **analyst-in-the-loop** workflows for interactive review and co
 
 ---
 
-### Core R Dependencies
 
-| Category | Packages |
-|-----------|-----------|
-| Data handling | `dplyr`, `tidyr`, `lubridate`, `readxl`, `data.table` |
-| Modeling | `MASS`, `broom`, `forecast`, `tidymodels`, `stacks` |
-| ML / Deep learning | `keras`, `torch` (optional) |
-| Visualization | `plotly` |
-| Parallel | `doParallel` |
 
 <img width="1536" height="791" alt="newplot" src="https://github.com/user-attachments/assets/0512d134-cc83-4add-a667-6001b9dc240e" />
 
@@ -228,31 +220,18 @@ Fluxes            → Estimate material fluxes or loads (e.g., sediment, nutrien
 
 This module provides advanced hydrological, sedimentary, and geochemical analysis tools. It complements the Data pipeline by offering computation, modeling, visualization, and reporting utilities for calibrated, derived, or cross-referenced datasets.
 
-1. Calibrate     → Define and fit rating curves; establish stage–discharge relationships
-2. Compute       → Derive discharges, sediment fluxes, and flow-normalized indicators
-3. Model         → Apply hydraulic, hydrological, or statistical models
-4. Remote Sense  → Process and visualize altimetry and water colour (optical) observations
-5. Geochemistry  → Perform statistical analyses, compute ionic ratios, and generate diagrams (Piper, Stiff, Schoeller, Gibbs); compare with standards or thresholds
-6. ADCP Advanced → Use HydSed-ADCP tools for velocity profiling, shear velocity (u*), concentration fitting, and moving-bed analyses
-7. Compare       → Cross-check datasets across sources, stations, or observation types
-8. Report        → Generate automatic reports (Concentration Analysis, Field Report, etc.)
+1. ADCP          → Use HydSed-ADCP tools for velocity profiling, shear velocity (u*), concentration fitting, and moving-bed analyses
+2. Model         → Apply hydraulic, hydrological, or statistical models
+3. Remote Sense  → Process and visualize altimetry and water colour (optical) observations
+4. Geochemistry  → Perform statistical analyses, compute ionic ratios, and generate diagrams (Piper, Stiff, Schoeller, Gibbs); compare with standards or thresholds
+5. Compare       → Cross-check datasets across sources, stations, or observation types
+6. Report        → Generate automatic reports (Concentration Analysis, Field Report, etc.)
 
 This toolbox enables expert-level interpretation, modeling, and cross-domain integration of hydrological, sedimentary, and geochemical datasets within WiSSkHy.
 
-
 ### ADCP Advanced
 
-
-
 <img width="1886" height="862" alt="image" src="https://github.com/user-attachments/assets/1665a642-bc83-4fca-9146-47849f296ebf" />
-
-
-
-
-
-
-
-
 
 
 ## Query generator Tab
