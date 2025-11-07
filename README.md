@@ -1,7 +1,7 @@
-# WiSSkHy - Public version ![Project Progress](https://img.shields.io/badge/Progress-60%25-brightgreen)
+# WiSSkHy - Public version ![Project Progress](https://img.shields.io/badge/Progress-60%25-brightgreen) ![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
 Wiki Soft Suite for Hydrology   
 Distill your data. Hydrate your science...
-![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
+
 
 ## The WiSSkHy Framework
 
