@@ -12,7 +12,8 @@ Its **database architecture** is conceptually aligned with the [OGC SensorThings
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
 > The **source code and full application** are currently hosted in a **private development repository**
-> until the first public release (expected 2026, open source licence). A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
+> until the first public release (expected 2026, open source licence).  
+> **A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)**
 
 The **`WiSSkHy-App`** was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
