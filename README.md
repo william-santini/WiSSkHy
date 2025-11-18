@@ -469,21 +469,29 @@ Each record has a unique `code` and a descriptive `name`.
 
 ### Table `quality`
 
-Reference table that defines the **quality flags** used for observations in `data`.  
-It can be customized by each institute to specify standardized codes and labels that are applied consistently across datasets.  
-Each record has a short `code`, a `label`, and an optional description.
+The `quality` table defines the **standardized quality levels** used to qualify all observations stored in the database.  
+Each entry represents a customizable **quality code** associated with a label and a description.
 
-| id | uuid                                 | code | label       | description                                   |
-|----|--------------------------------------|------|-------------|-----------------------------------------------|
-| 1  | 550e8400-e29b-41d4-a716-446655440200 | ok   | OK          | Valid / reliable observation                  |
-| 2  | 550e8400-e29b-41d4-a716-446655440201 | DBT  | Doubtful    | Suspect or uncertain value                    |
-| 3  | 550e8400-e29b-41d4-a716-446655440202 | P    | Partial     | Incomplete measurement or partially valid     |
-| 4  | 550e8400-e29b-41d4-a716-446655440203 | CUM  | Cumulative  | Value represents an accumulation over a period |
+WiSSkHy follows the structure of the **WMO quality framework**, extended with additional levels widely used in hydrology (e.g., *Partial*, *Estimated*, *Missing*).  
+Internally, each code is mapped to a numeric `quality_flag` (0–7) that ensures consistent filtering, visualization, and quality control across modules.
 
-➡️ **Usage**:  
-- Linked in the `data.quality_id` field.  
-- Ensures consistent handling of data validation and uncertainty.
+| id | uuid                                  | code  | label        | description                                      | quality_flag |
+|----|---------------------------------------|-------|--------------|--------------------------------------------------|--------------|
+| 1  | 550e8400-e29b-41d4-a716-446655440200  | RAW   | Raw          | Unprocessed observation (no QC applied)          | 0 |
+| 2  | 550e8400-e29b-41d4-a716-446655440201  | SCR   | Screened     | Basic automatic filtering / range checks         | 1 |
+| 3  | 550e8400-e29b-41d4-a716-446655440202  | PROV  | Provisional  | Preliminary QC; partially controlled value       | 2 |
+| 4  | 550e8400-e29b-41d4-a716-446655440203  | PART  | Partial      | Incomplete but usable measurement                | 2 |
+| 5  | 550e8400-e29b-41d4-a716-446655440204  | GOOD  | Good         | Fully validated data                             | 3 |
+| 6  | 550e8400-e29b-41d4-a716-446655440205  | EST   | Estimated    | Modelled or interpolated value                   | 4 |
+| 7  | 550e8400-e29b-41d4-a716-446655440206  | SUS   | Suspect      | Doubtful or uncertain value                      | 5 |
+| 8  | 550e8400-e29b-41d4-a716-446655440207  | BAD   | Bad          | Invalid or rejected observation                  | 6 |
+| 9  | 550e8400-e29b-41d4-a716-446655440208  | MISS  | Missing      | No observation available                          | 7 |
 
+**Usage:**
+- `data.quality_id` links each observation to an entry in `quality`.  
+- Institutions may rename, add or modify quality codes as needed.  
+- The `quality_flag` (0–7) ensures a consistent internal hierarchy based on the WMO quality framework.  
+- Simplified categories (e.g., *Good / Suspect / Bad*) can be derived automatically for plotting and reporting.
 
 
 ---
