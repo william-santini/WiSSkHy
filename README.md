@@ -393,11 +393,9 @@ Users may extend this list by adding new parameters as required.
 
 ### Table `ts_label`
 
-The `ts_label` table defines **standard labels for time series providers or data sources**  
-(e.g. HyBAm observatory, national hydrological services, port authorities, satellite-based virtual stations).
+The `ts_label` table defines **standard labels for time series providers or data sources** (e.g. HyBAm observatory, national hydrological services, port authorities, satellite-based virtual stations).
 
-It is used to document **where a time series comes from** and to group series by institutional or technical origin  
-(in-situ networks, scientific observatories, remote sensing platforms, model outputs, etc.).  
+It is used to document **where a time series comes from** and to group series by institutional or technical origin (in-situ networks, scientific observatories, remote sensing platforms, model outputs, etc.).  
 Data quality itself is handled separately in the `quality` table.
 
 | id | uuid                                  | code     | label                    | category             | description                                               | create_auto_TS |
@@ -487,13 +485,9 @@ Each record has a unique `code` and a descriptive `name`.
 
 ### Table `quality`
 
-The `quality` table defines standardized **quality flags** associated with each observation.  
-Each entry contains a customizable short `code`, a human-readable `label`, an optional description,  
-and an internal `quality_flag` (integer 0–7) that follows the structure recommended by  
-the **World Meteorological Organization (WMO)** for observational data quality.
+The `quality` table defines standardized **quality flags** associated with each observation. Each entry contains a customizable short `code`, a human-readable `label`, an optional description, and an internal `quality_flag` (integer 0–7) that follows the structure recommended by the **World Meteorological Organization (WMO)** for observational data quality.
 
-This design separates **data provenance** (handled by `ts_label`) from **data quality**  
-(handled here), and ensures consistent handling of QC information across WiSSkHy modules.
+This design separates **data provenance** (handled by `ts_label`) from **data quality** (handled here), and ensures consistent handling of QC information across WiSSkHy modules.
 
 | id | uuid                                  | code  | label        | description                                  | quality_flag |
 |----|---------------------------------------|-------|--------------|----------------------------------------------|--------------|
@@ -508,9 +502,7 @@ This design separates **data provenance** (handled by `ts_label`) from **data qu
 | 9  | 550e8400-e29b-41d4-a716-446655440208   | MISS  | Missing      | No observation available                      | 7 |
 
 **WMO quality hierarchy (implemented in WiSSkHy)**  
-WiSSkHy aligns its internal `quality_flag` structure with the  
-**WMO OSCAR Quality Framework** and related coding standards (WMO BUFR/CREX),  
-which distinguish different levels of observational reliability:
+WiSSkHy aligns its internal `quality_flag` structure with the **WMO OSCAR Quality Framework** and related coding standards (WMO BUFR/CREX), which distinguish different levels of observational reliability:
 
 | quality_flag | WMO level              | Meaning                                   |
 |--------------|------------------------|-------------------------------------------|
@@ -523,9 +515,7 @@ which distinguish different levels of observational reliability:
 | 6            | Bad                    | Invalid / rejected                         |
 | 7            | Missing (extension)    | No observation available                   |
 
-The codes (`RAW`, `PROV`, `GOOD`, etc.) are **fully customizable** by each institute,  
-but the internal `quality_flag` (0–7) guarantees **stable, WMO-consistent behavior**  
-for filtering, visualization, QC workflows and FAIR metadata export.
+The codes (`RAW`, `PROV`, `GOOD`, etc.) are **fully customizable** by each institute, but the internal `quality_flag` (0–7) guarantees **stable, WMO-consistent behavior** for filtering, visualization, QC workflows and FAIR metadata export.
 
 
 ---
