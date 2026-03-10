@@ -1,14 +1,15 @@
-# WiSSkHy - Public version ![Project Progress](https://img.shields.io/badge/Progress-60%25-brightgreen) ![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
+# RIO (ex. WiSSkHy) - Public version ![Project Progress](https://img.shields.io/badge/Progress-60%25-brightgreen) ![Views](https://komarev.com/ghpvc/?username=williamsantini&label=Views&color=0e75b6&style=flat)
 Wiki Soft Suite for Hydrology   
 Distill your data. Hydrate your science...  
 [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)
 
 
-## The WiSSkHy Framework
+## The RIO Framework
 
-**`WiSSkHy`** is a **modular, polyglot, collaborative, and open-source** framework built with **`R Shiny`**, **`Julia`**, `Python`, and **`SQLite`** (with a planned migration to `PostgreSQL`) for **hydrological operational data management and Research**.  
+**`RIO`** is a **modular, polyglot, collaborative, and open-source** framework built with **`R Shiny`**, **`Julia`**, `Python`, and **`SQLite`** (with a planned migration to `PostgreSQL`) for **hydrological operational data management and Research**.  
 It is designed as a **self-contained and deployable** system, allowing both local and network-based use by hydrological services and research teams.  
-Its **database architecture** is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a strong emphasis on **interoperability** (OGC/ISO standards) and **reproducibility** (open formats, transparent workflows). It is both an EIS (Environmental Information System) and a VRE (Virtual Research Environment).
+Its **database architecture** is conceptually aligned with the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html) and designed according to the [FAIR principles](https://www.go-fair.org/fair-principles/) (*Findable, Accessible, Interoperable, Reusable*), with a strong emphasis on **interoperability** (OGC/ISO standards) and **reproducibility** (open formats, transparent workflows).   
+**RIO combines the functionalities of an Environmental Information System (EIS) and a Virtual Research Environment (VRE).**
 
 > [!NOTE]   
 > This repository is the **public overview** of the WiSSkHy framework.  
@@ -16,13 +17,13 @@ Its **database architecture** is conceptually aligned with the [OGC SensorThings
 > until the first public release (expected 2026, open source licence).  
 > **A demo version is available here:  [WiSSkHy Demo (ShinyApps.io)](https://sno-hybam.shinyapps.io/WiSSkHy/)**
 
-The **`WiSSkHy-App`** was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
+The **`RIO-App`** was created to provide access to the main tools of the `WiSSkHy` environment. Beyond these core features, users can:
 - Add new tools directly in R-Shiny, either within the existing apps or independently.
 - Write custom scripts in R, Python, or other languages to work with the WiSSkHy SQLite database.
 - Use the apps to automatically generate SQL queries that can be reused in custom code/script.
 
 > [!NOTE]  
-> `WiSSkHy` not only provides access to core tools but also acts as a collaborative "Wiki":  
+> `RIO` not only provides access to core tools but also acts as a collaborative "Wiki":  
 > - users can contribute, share, and reuse tools or scripts within the community.  
 > - This flexibility encourages collective development, knowledge exchange, and the integration of custom processing, analysis, or visualization workflows, all while leveraging the common `WiSSkHy` database structure.
 
@@ -33,7 +34,7 @@ The **`WiSSkHy-App`** was created to provide access to the main tools of the `Wi
 
 <br><br>
 
-`WiSSkHy-App` provides a complete workflow with pipelines to support hydrological services and researchers, including:
+`RIO-App` provides a complete workflow with pipelines to support hydrological services and researchers, including:
    
 - Data import & storage in a local SQLite database
 - Database management (visualize, add, or delete tables and fields)
@@ -52,7 +53,7 @@ The **`WiSSkHy-App`** was created to provide access to the main tools of the `Wi
 - Automated report generation in LaTeX, Word, and HTML (using R Markdown and Quarto)
 
 
-## Collaborative use of the database `WiSSkHy-db`
+## Collaborative use of the database `RIO-db`
 
 SQLite supports multi-user access, but with important limitations:  
 - **Read operations** can be performed simultaneously by multiple users.  
@@ -60,22 +61,22 @@ SQLite supports multi-user access, but with important limitations:
 
 To facilitate collaboration, WiSSkHy includes a **"Refresh Database"** button so that users can always reload the most recent changes made by others.  
 
-`WiSSkHy` is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python**, and other tools for data curation, analysis, and scientific research.  
+`RIO` is primarily designed as a **local tool**, complementing centralized server solutions. It allows researchers to fully leverage the power of **R, Python**, and other tools for data curation, analysis, and scientific research.  
 
 > [!TIP]  
 > **Future development**  
-> A **PostgreSQL** version of WiSSkHy is planned, enabling a true multi-user environment with efficient concurrency management.  
+> A **PostgreSQL** version of RIO is planned, enabling a true multi-user environment with efficient concurrency management.  
 > This version will follow all the FAIR principles (Findable, Accessible, Interoperable, Reusable).
 
-# Getting started with the `WiSSkHy-App`
+# Getting started with the `RIO-App`
 
 ## Installation
-You can either run the Shiny apps with RStudio or use the WiSSkHy.exe. 
-If you need to access the WiSSkHy SQLite database externally, you can install DBeaver or SQLite Browser.
+You can either run the Shiny apps with RStudio or use the RIO.exe. 
+If you need to access the RIO SQLite database externally, you can install DBeaver or SQLite Browser.
 
 ## Pipeline database
 
-### Start by creating or loading a `WiSSkHy-db`
+### Start by creating or loading a `RIO-db`
 
 ### Thing (station or platform)
 
@@ -130,7 +131,7 @@ It allows users to filter, clean, and format hydrological and sediment data prio
   
 ### Fill & Validate 
 
-_(WiSSkHy-CoFi: Consistency & Filling — part of the WiSSkHy data toolbox)_
+_(RIO-CoFi: Consistency & Filling — part of the WiSSkHy data toolbox)_
 
 Tools for **time-series consistency analysis** and **gap filling** in hydrological and sediment datasets.  
 The module builds, tests, and validates estimators (statistical, mechanistic, or machine learning) before any automated filling.  
@@ -242,15 +243,15 @@ This toolbox enables expert-level interpretation, modeling, and cross-domain int
 
 ## Database Structure
 
-`WiSSkHy` manages **stations** as operational entities (hydrological sites equipped with sensors or used for field campaigns) and links them to **features of interest (FOI)**, i.e. the real-world entities being observed (rivers, cross-sections, basins, lakes, transects...).  
+`RIO` manages **stations** as operational entities (hydrological sites equipped with sensors or used for field campaigns) and links them to **features of interest (FOI)**, i.e. the real-world entities being observed (rivers, cross-sections, basins, lakes, transects...).  
 
 The database stores both:
 - **Direct observations** coming from sensors (e.g., limnigraphs, ADCP), and  
 - **Derived data** (e.g., discharge, sediment fluxes), which are not produced by a physical sensor but calculated from raw data.  
 
-Because of this, `WiSSkHy` relies on the concept of **time series** rather than direct **datastreams** as defined in the SensorThings standard. However, each time series can still be associated with a sensor when relevant.  
+Because of this, `RIO` relies on the concept of **time series** rather than direct **datastreams** as defined in the SensorThings standard. However, each time series can still be associated with a sensor when relevant.  
 
-The database structure makes it possible to map `WiSSkHy` entities (things, time series, data, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `WiSSkHy` can therefore be considered as **conceptually aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
+The database structure makes it possible to map `RIO` entities (things, time series, data, FOI) to the [OGC SensorThings API standard](https://docs.ogc.org/is/18-088/18-088.html). `RIO` can therefore be considered as **conceptually aligned with the SensorThings model**, while remaining flexible enough to handle both raw and derived hydrological data.  
 
 **UUIDs** are automatically assigned to each core entity (`things`, `feature_of_interest`, `time_series`, `data`, `discrete_sampling`, etc.) to guarantee uniqueness and to facilitate merging of databases from different sources without conflicts. The UUID is generated directly in the SQL code and the user don't have to care about it.
 
@@ -275,8 +276,8 @@ When the user creates a station, he must choose and configure the attached time 
 
 ## Database Views
 
-The `WiSSkHy` database uses incremental IDs as primary keys instead of composite keys in order to optimize SQL joins and group operations.  
-To provide more comprehensive and user-friendly access to the data, WiSSkHy defines a set of **SQL views**.
+The `RIO` database uses incremental IDs as primary keys instead of composite keys in order to optimize SQL joins and group operations.  
+To provide more comprehensive and user-friendly access to the data, RIO defines a set of **SQL views**.
 
 These views:  
 - Expose meaningful relationships between tables without requiring complex joins.  
@@ -502,7 +503,7 @@ This design separates **data provenance** (handled by `ts_label`) from **data qu
 | 9  | 550e8400-e29b-41d4-a716-446655440208   | MISS  | Missing      | No observation available                      | 7 |
 
 **WMO quality hierarchy (implemented in WiSSkHy)**  
-WiSSkHy aligns its internal `quality_flag` structure with the **WMO OSCAR Quality Framework** and related coding standards (WMO BUFR/CREX), which distinguish different levels of observational reliability:
+RIO aligns its internal `quality_flag` structure with the **WMO OSCAR Quality Framework** and related coding standards (WMO BUFR/CREX), which distinguish different levels of observational reliability:
 
 | quality_flag | WMO level              | Meaning                                   |
 |--------------|------------------------|-------------------------------------------|
